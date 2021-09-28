@@ -2,6 +2,9 @@ const express = require('express');
 const request = require('request');
 const path = require('path');
 const app = express();
+const cors = require('cros');
+
+app.use(cors({ origin: 'https://numbers-priyang.herokuapp.com/' }));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');

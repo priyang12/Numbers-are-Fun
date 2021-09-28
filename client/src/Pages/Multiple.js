@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 import Footer from '../Components/Footer';
-import MultipleRandomFacts from '../Components/MultipleRandomFacts';
+import MultipleFacts from '../Components/MultipleFacts';
 
 const Multiple = () => {
   return (
     <Fragment>
-      <MultipleRandomFacts />
+      <MultipleFacts />
       <Footer />
     </Fragment>
   );

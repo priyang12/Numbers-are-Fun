@@ -5,12 +5,9 @@ const Factslist = ({ Facts }) => {
   const [ArrayFacts, setArrayFacts] = useState([]);
   useEffect(() => {
     for (const i in Facts) {
-      if (typeof Facts !== 'string') {
-        setArrayFacts((pre) => pre.concat(Facts[i]));
-      }
+      setArrayFacts((pre) => pre.concat(Facts[i]));
     }
   }, [Facts]);
-
   if (!Facts) return;
   return (
     <div className='mt-5'>

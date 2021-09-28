@@ -7,7 +7,7 @@ import { useFetch, useCounter } from '../utils/Hooks';
 
 const Factslist = lazy(() => import('./Factslist'));
 
-const MultipleRandomFacts = () => {
+const MultipleFacts = () => {
   const [start, incrementStart, decrementStart] = useCounter(0);
   const [end, incrementEnd, decrementEnd] = useCounter(5);
   const [url, seturl] = useState(`?ApiCall=${start}..${end}/math`);
@@ -97,11 +97,11 @@ const MultipleRandomFacts = () => {
         </div>
       ) : (
         <Suspense fallback={Dice}>
-          <Factslist Facts={fact} />
+          <Factslist Facts={JSON.parse(fact)} />
         </Suspense>
       )}
     </div>
   );
 };
 
-export default MultipleRandomFacts;
+export default MultipleFacts;
