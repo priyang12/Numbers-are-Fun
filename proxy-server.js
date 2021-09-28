@@ -2,7 +2,7 @@ const express = require('express');
 const request = require('request');
 const path = require('path');
 const app = express();
-const cors = require('cros');
+var cors = require('cors');
 
 app.use(cors({ origin: 'https://numbers-priyang.herokuapp.com/' }));
 
