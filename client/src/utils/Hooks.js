@@ -18,7 +18,7 @@ export const useFetch = (url) => {
       try {
         setloading(true);
         console.log('API CALL');
-        const { data } = await axios.get('http://localhost:5000/api' + url);
+        const { data } = await axios.get('/api' + url);
         console.log(data);
         setfact(data);
         setError(null);
