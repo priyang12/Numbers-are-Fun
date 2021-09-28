@@ -4,19 +4,11 @@ const path = require('path');
 const app = express();
 var cors = require('cors');
 
-app.use(cors({ origin: 'https://numbers-priyang.herokuapp.com/' }));
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
-  );
-  next();
-});
-
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 app.get('/api', (req, res) => {
   console.log(req.query.ApiCall);
   request(
@@ -35,7 +27,7 @@ const _dirname = path.resolve();
 
 app.use('/Photos', express.static(path.join(__dirname, '/Photos')));
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'production') {
   app.use(express.static(path.join(_dirname, '/client/build')));
 
   app.get('*', (req, res) =>
