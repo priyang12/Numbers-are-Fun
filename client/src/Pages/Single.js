@@ -2,7 +2,6 @@ import SingleFact from '../Components/SingleFact';
 import Board from '../utils/Board';
 import Header from '../Components/Header';
 import { Fragment } from 'react';
-import Footer from '../Components/Footer';
 
 const Single = () => {
   return (
@@ -13,7 +12,6 @@ const Single = () => {
         <SingleFact type='trivia' />
         <SingleFact type='year' />
       </Board>
-      <Footer />
     </Fragment>
   );
 };

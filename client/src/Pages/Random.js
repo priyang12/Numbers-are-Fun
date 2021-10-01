@@ -1,7 +1,6 @@
 import { Fragment, lazy, Suspense } from 'react';
 import Header from '../Components/Header';
 import Board from '../utils/Board';
-import Footer from '../Components/Footer';
 import Dice from '../utils/DiceRoll';
 
 const RandomFacts = lazy(() => import('../Components/RandomFacts'));
@@ -27,8 +26,6 @@ const Random = () => {
           <RandomFacts type='year' />
         </Board>
       </Suspense>
-
-      <Footer />
     </Fragment>
   );
 };

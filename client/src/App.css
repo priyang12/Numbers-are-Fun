@@ -6,6 +6,8 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
 .list {
+  height: 100%;
+  max-height: 12160px;
   padding: 0.5em;
   list-style-type: none;
 }
@@ -79,7 +81,7 @@ input[type='submit'] {
   z-index: 0;
 }
 #getFacts {
-  border-bottom: 2px dotted #ddd;
+  border-bottom: 5px dotted #ddd;
 }
 #getFacts:last-child {
   border: none;
@@ -95,8 +97,10 @@ input[type='submit'] {
 #end :last-child {
   cursor: pointer;
   background-color: #fff;
+  border-radius: 20px;
   margin: 10px;
   color: #333;
+  height: 1em;
   transition: all 0.5s ease;
 }
 #start :first-child:hover,
@@ -106,7 +110,33 @@ input[type='submit'] {
   background-color: #333;
   color: #fff;
 }
-
+.footer-container {
+  padding: 1em;
+  background-color: #a0801686;
+}
+.footer-container ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  padding: 1em;
+}
+.footer-container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100px;
+  background-color: #22161c;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.footer-container ul li:hover {
+  background-color: #e6d821;
+}
+.footer-container ul li img {
+  width: 100%;
+  min-width: 50px;
+}
 @media only screen and (min-width: 1200px) {
   #inputValue:focus {
     margin: 2em;
@@ -133,4 +163,10 @@ input[type='submit'] {
     text-align: center;
     height: fit-content;
   }
+  /* .footer-container ul li {
+    padding: 30px;
+  }
+  .footer-container ul li {
+    padding: 30px;
+  } */
 }

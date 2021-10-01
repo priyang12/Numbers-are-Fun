@@ -6,6 +6,7 @@ import Random from './Pages/Random';
 import Multiple from './Pages/Multiple';
 import Mathathesians from './Pages/Mathathesians';
 import './App.css';
+import Footer from './Components/Footer';
 
 function App() {
   const NotFound = () => {
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/Multiple' component={Multiple} />
           <Route path='*' component={NotFound} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

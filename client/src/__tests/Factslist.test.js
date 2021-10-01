@@ -10,9 +10,10 @@ const List = `{
   "5": "5 is also the number of Platonic solids."
  }`;
 
+const newList = JSON.parse(List);
 describe('List Test', () => {
   it('check loading', () => {
-    render(<Factslist Facts={List} />);
+    render(<Factslist Facts={newList} />);
     const container = screen.getByTestId('ListItems');
   });
 });

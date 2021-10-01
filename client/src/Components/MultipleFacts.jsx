@@ -1,22 +1,28 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import Board from '../utils/Board';
 import Header from './Header';
 import Dice from '../utils/DiceRoll';
 import Down from '../assets/dropdown.png';
 import { useFetch, useCounter } from '../utils/Hooks';
-
-const Factslist = lazy(() => import('./Factslist'));
+import Factslist from './Factslist';
 
 const MultipleFacts = () => {
   const [start, incrementStart, decrementStart] = useCounter(0);
   const [end, incrementEnd, decrementEnd] = useCounter(5);
-  const [url, seturl] = useState(`?ApiCall=${start}..${end}/math`);
+  const [JsonFacts, setJsonFacts] = useState(null);
+  const [url, seturl] = useState(`?ApiCall=0..5/math`);
   const { loading, Error, fact } = useFetch(url);
-  console.log(fact);
+  useEffect(() => {
+    if (fact) {
+      setJsonFacts(JSON.parse(fact));
+    }
+  }, [fact]);
+
   const checkValue = (beg, to) => {
     if (beg < to) return false;
     return true;
   };
+  console.log(url);
   const mathSelect = () => {
     checkValue(start, end);
     seturl(`?ApiCall=${start}..${end}/math`);
@@ -96,9 +102,7 @@ const MultipleFacts = () => {
           {Error ? Error?.message && 'Server Timeout' : 'Server Timeout'}
         </div>
       ) : (
-        <Suspense fallback={Dice}>
-          <Factslist Facts={JSON.parse(fact)} />
-        </Suspense>
+        <Factslist Facts={JsonFacts} />
       )}
     </div>
   );
