@@ -1,5 +1,5 @@
 import { Fragment, lazy, Suspense } from 'react';
-import Header from '../Components/Header';
+import TitleName from '../Components/TitleName';
 import Board from '../utils/Board';
 import Dice from '../utils/DiceRoll';
 
@@ -10,7 +10,7 @@ const Random = () => {
     <Fragment>
       <Suspense fallback={Dice}>
         <Board>
-          <Header title='Random Numbers' />
+          <TitleName title='Random Numbers' />
           <RandomFacts type='math' />
         </Board>
       </Suspense>

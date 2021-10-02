@@ -1,9 +1,10 @@
-nav {
+header {
   color: #fff;
   backdrop-filter: blur(12px) saturate(161%);
   -webkit-backdrop-filter: blur(12px) saturate(161%);
   background-color: rgba(0, 0, 0, 0.54);
   border: 1px solid rgba(255, 255, 255, 0.125);
+  min-height: 150px;
 }
 .list {
   height: 100%;
@@ -71,6 +72,9 @@ input[type='submit'] {
 }
 #blackboard-secondary {
   color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100%;
   border: #6fa58a solid 20px;
   background: url('./assets/bored-3.webp') no-repeat center/cover;
   border-top: #7ebda0 solid 20px;

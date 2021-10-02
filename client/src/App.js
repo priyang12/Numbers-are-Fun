@@ -4,7 +4,7 @@ import Navigator from './Components/Navigator';
 import Single from './Pages/Single';
 import Random from './Pages/Random';
 import Multiple from './Pages/Multiple';
-import Mathathesians from './Pages/Mathathesians';
+import Mathematicians from './Pages/Mathematicians';
 import './App.css';
 import Footer from './Components/Footer';
 
@@ -19,7 +19,7 @@ function App() {
         <Navigator />
         <Switch>
           <Route exact path='/' component={Single} />
-          <Route exact path='/Math' component={Mathathesians} />
+          <Route exact path='/Math' component={Mathematicians} />
           <Route exact path='/Random' component={Random} />
           <Route exact path='/Multiple' component={Multiple} />
           <Route path='*' component={NotFound} />

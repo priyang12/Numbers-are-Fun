@@ -4,7 +4,7 @@ import Board from '../utils/Board';
 const Links = () => {
   const Path = useLocation().pathname;
   return (
-    <div className='mx-auto navigator '>
+    <nav className='mx-auto navigator '>
       <ul className='d-flex flex-column flex-md-row align-items-center justify-content-around p-4 text-center'>
         {Path !== '/' && (
           <Board type='primary'>
@@ -43,7 +43,7 @@ const Links = () => {
           </Board>
         )}
       </ul>
-    </div>
+    </nav>
   );
 };
 

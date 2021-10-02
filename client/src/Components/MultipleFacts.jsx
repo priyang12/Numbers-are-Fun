@@ -1,28 +1,16 @@
-import { useState, useEffect } from 'react';
 import Board from '../utils/Board';
-import Header from './Header';
-import Dice from '../utils/DiceRoll';
+import Header from './Navbar';
 import Down from '../assets/dropdown.png';
-import { useFetch, useCounter } from '../utils/Hooks';
-import Factslist from './Factslist';
+import { useCounter } from '../utils/Hooks';
 
-const MultipleFacts = () => {
+const MultipleFacts = ({ seturl }) => {
   const [start, incrementStart, decrementStart] = useCounter(0);
   const [end, incrementEnd, decrementEnd] = useCounter(5);
-  const [JsonFacts, setJsonFacts] = useState(null);
-  const [url, seturl] = useState(`?ApiCall=0..5/math`);
-  const { loading, Error, fact } = useFetch(url);
-  useEffect(() => {
-    if (fact) {
-      setJsonFacts(JSON.parse(fact));
-    }
-  }, [fact]);
 
   const checkValue = (beg, to) => {
-    if (beg < to) return false;
+    if (beg - to > 99) return false;
     return true;
   };
-  console.log(url);
   const mathSelect = () => {
     checkValue(start, end);
     seturl(`?ApiCall=${start}..${end}/math`);
@@ -95,15 +83,6 @@ const MultipleFacts = () => {
           </div>
         </div>
       </Board>
-      {loading || fact === null ? (
-        <Dice />
-      ) : Error ? (
-        <div>
-          {Error ? Error?.message && 'Server Timeout' : 'Server Timeout'}
-        </div>
-      ) : (
-        <Factslist Facts={JsonFacts} />
-      )}
     </div>
   );
 };

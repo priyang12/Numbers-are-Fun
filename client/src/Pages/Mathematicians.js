@@ -1,19 +1,19 @@
 import Bored from '../utils/Board';
-import Header from '../Components/Header';
+import TitleName from '../Components/TitleName';
 import Ramanurjan from '../Components/Ramanurjan';
 import ramaImg from '../assets/Ramanujan.jpeg';
 
-const Mathathesians = () => {
+const Mathematicians = () => {
   return (
-    <div className='d-flex'>
-      <div className='order-'>
+    <div className=' d-flex flex-column flex-md-row justify-content-centers container'>
+      <div className='order- '>
         <Bored type='secondary'>
           <img src={ramaImg} alt='rama' />
         </Bored>
       </div>
       <div className='order-1'>
         <Bored>
-          <Header title='Tale of 1927' />
+          <TitleName title='Tale of 1927' />
           <Ramanurjan />
         </Bored>
       </div>
@@ -21,4 +21,4 @@ const Mathathesians = () => {
   );
 };
 
-export default Mathathesians;
+export default Mathematicians;

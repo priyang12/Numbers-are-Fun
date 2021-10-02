@@ -1,9 +1,9 @@
-const Navbar = () => {
+const Headers = () => {
   return (
-    <nav className='nav display-1 text-center justify-content-center'>
+    <header className='nav display-1 text-center justify-content-center'>
       Tales of Numbers
-    </nav>
+    </header>
   );
 };
 
-export default Navbar;
+export default Headers;
