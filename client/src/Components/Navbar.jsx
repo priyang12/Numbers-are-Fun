@@ -1,9 +1,9 @@
-const Headers = () => {
+const Header = ({ Title }) => {
   return (
-    <header className='nav display-1 text-center justify-content-center'>
-      Tales of Numbers
+    <header className=' navbar display-1 text-center justify-content-center'>
+      {Title}
     </header>
   );
 };
 
-export default Headers;
+export default Header;

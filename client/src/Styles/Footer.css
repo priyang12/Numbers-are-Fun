@@ -1,0 +1,24 @@
+.footer-container {
+  margin-top: 2em;
+  padding: 1em;
+  background-color: rgba(51, 51, 51, 0.671);
+}
+.footer-container ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-container ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100px;
+  background-color: #22161c;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.footer-container ul li:hover {
+  background-color: #e6d821;
+}
+.footer-container ul li img {
+  width: 50px;
+}

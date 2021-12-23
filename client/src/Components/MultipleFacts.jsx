@@ -1,7 +1,9 @@
-import Board from '../utils/Board';
-import Header from './Navbar';
-import Down from '../assets/dropdown.png';
-import { useCounter } from '../utils/Hooks';
+import Board from "../utils/Board";
+import Header from "./Navbar";
+import Down from "../assets/dropdown.png";
+import { useCounter } from "../utils/Hooks";
+import "../Styles/NumberInput.css";
+import "../Styles/List.css";
 
 const MultipleFacts = ({ seturl }) => {
   const [start, incrementStart, decrementStart] = useCounter(0);
@@ -36,16 +38,16 @@ const MultipleFacts = ({ seturl }) => {
             <p className='h4'>Between Diffrence of 100</p>
           </h1>
           <h4>Start</h4>
-          <div id='start' className='d-flex align-items-center'>
-            <div onClick={decrementStart}>{'<'}</div>
+          <div className='d-flex align-items-center start'>
+            <div onClick={decrementStart}>{"<"}</div>
             <div>{start}</div>
-            <div onClick={incrementStart}>{'>'}</div>
+            <div onClick={incrementStart}>{">"}</div>
           </div>
           <h4>End</h4>
           <div id='end' className='d-flex align-items-center'>
-            <div onClick={decrementEnd}>{'<'}</div>
+            <div onClick={decrementEnd}>{"<"}</div>
             <div>{end}</div>
-            <div onClick={incrementEnd}>{'>'}</div>
+            <div onClick={incrementEnd}>{">"}</div>
           </div>
         </div>
         <div className='d-flex'>

@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { useFetch, useCounter } from '../utils/Hooks';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import { useFetch, useCounter } from "../utils/Hooks";
+import PropTypes from "prop-types";
+import "../Styles/NumberInput.css";
 
 const GetFact = ({ type }) => {
   const [url, seturl] = useState(`?ApiCall=0/${type}`);
@@ -38,10 +39,10 @@ const GetFact = ({ type }) => {
           /{type}
         </label>
 
-        <div id='start' className='d-flex align-items-center p-3 display-2'>
-          <div onClick={decrementStart}>{'<'}</div>
+        <div className='d-flex align-items-center p-3 display-2 start'>
+          <div onClick={decrementStart}>{"<"}</div>
           <div>{start}</div>
-          <div onClick={incrementStart}>{'>'}</div>
+          <div onClick={incrementStart}>{">"}</div>
         </div>
 
         <div
@@ -49,7 +50,7 @@ const GetFact = ({ type }) => {
           className='order-3 p-3 display-5 border m-3'
           onClick={onClick}
         >
-          Click
+          Find
         </div>
       </div>
     </form>

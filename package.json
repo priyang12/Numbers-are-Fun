@@ -9,7 +9,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Priyang",
   "license": "ISC",
   "description": "",
   "dependencies": {

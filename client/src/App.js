@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Navigator from './Components/Navigator';
-import Single from './Pages/Single';
-import Random from './Pages/Random';
-import Multiple from './Pages/Multiple';
-import Mathematicians from './Pages/Mathematicians';
-import './App.css';
-import Footer from './Components/Footer';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./Components/Navbar";
+import Navigator from "./Components/Navigator";
+import Single from "./Pages/Single";
+import Random from "./Pages/Random";
+import Multiple from "./Pages/Multiple";
+import Mathematicians from "./Pages/Mathematicians";
+import "./App.css";
+import Footer from "./Components/Footer";
 
 function App() {
   const NotFound = () => {
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <Navbar />
+        <Header Title='Tales of Numbers' />
         <Navigator />
         <Switch>
           <Route exact path='/' component={Single} />
