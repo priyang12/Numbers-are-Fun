@@ -12,6 +12,11 @@ function App() {
   const NotFound = () => {
     return <div className='p-5 text-light display-1 bg-black'>NotFound</div>;
   };
+  const SocialLinks = {
+    linkdin: "https://www.linkedin.com/in/priyang-patel-948685176",
+    github: "https://github.com/priyang12",
+    twitter: "https://twitter.com/Priyang_Bawa",
+  };
   return (
     <div className='App'>
       <Router>
@@ -24,7 +29,7 @@ function App() {
           <Route exact path='/Multiple' component={Multiple} />
           <Route path='*' component={NotFound} />
         </Switch>
-        <Footer />
+        <Footer links={SocialLinks} />
       </Router>
     </div>
   );
