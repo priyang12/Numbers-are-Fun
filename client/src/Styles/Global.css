@@ -22,6 +22,7 @@ code {
   font-weight: normal;
   src: local("pastelRegular"),
     url("../fonts/pastel\ crayon.woff") format("woff");
+  font-display: swap;
 }
 header {
   color: #fff;
