@@ -32,10 +32,13 @@ const GetFact = ({ type }) => {
         )}
       </div>
       <div
-        className='d-flex align-items-center justify-content-center inputfield'
+        className='d-flex align-items-center justify-content-center flex-wrap'
         data-testid='form-test'
       >
-        <label htmlFor={type} className='display-6 order-2'>
+        <label
+          htmlFor={type}
+          className='display-6 order-2 flex-fill text-center'
+        >
           /{type}
         </label>
 

@@ -3,7 +3,6 @@ import Header from "./Navbar";
 import Down from "../assets/dropdown.png";
 import { useCounter } from "../utils/Hooks";
 import "../Styles/NumberInput.css";
-import "../Styles/List.css";
 
 const MultipleFacts = ({ seturl }) => {
   const [start, incrementStart, decrementStart] = useCounter(0);
@@ -28,7 +27,7 @@ const MultipleFacts = ({ seturl }) => {
   return (
     <div id='radomFacts' className='containe' data-testid='multirandom'>
       <Board>
-        <Header title='Multiple Numbers' />
+        <Header Title='Multiple Numbers' />
         <div
           id='range'
           className='display-1 d-flex flex-column flex-md-row  align-items-center justify-content-around mt-2 '
@@ -44,7 +43,7 @@ const MultipleFacts = ({ seturl }) => {
             <div onClick={incrementStart}>{">"}</div>
           </div>
           <h4>End</h4>
-          <div id='end' className='d-flex align-items-center'>
+          <div className='d-flex align-items-center end'>
             <div onClick={decrementEnd}>{"<"}</div>
             <div>{end}</div>
             <div onClick={incrementEnd}>{">"}</div>

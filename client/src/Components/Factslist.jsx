@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
-import Board from '../utils/Board';
+import { useEffect, useState } from "react";
+import Board from "../utils/Board";
+import "../Styles/List.css";
 
 const Factslist = ({ Facts }) => {
   const [ArrayFacts, setArrayFacts] = useState([]);

@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { useFetch } from '../utils/Hooks';
-import PropTypes from 'prop-types';
-import Dice from '../utils/DiceRoll';
+import { useState } from "react";
+import { useFetch } from "../utils/Hooks";
+import PropTypes from "prop-types";
+import Dice from "../utils/DiceRoll";
 
 const RandomFacts = ({ type }) => {
   const [url, seturl] = useState(`?ApiCall=random/${type}`);
@@ -12,7 +12,11 @@ const RandomFacts = ({ type }) => {
   };
 
   return (
-    <div id='getRandomFacts' className='m-2' data-testid='FactTestId'>
+    <div
+      id='getRandomFacts'
+      className='m-2 text-center'
+      data-testid='FactTestId'
+    >
       <form
         className='d-flex align-items-center justify-content-center inputfield'
         onSubmit={onsubmit}
@@ -24,7 +28,7 @@ const RandomFacts = ({ type }) => {
       </form>
       {/* //DATA */}
       <div id='RandomFacts' className='display-4 '>
-        {loading ? <Dice /> : Error ? 'Server Timeout' : fact}
+        {loading ? <Dice /> : Error ? "Server Timeout" : fact}
       </div>
     </div>
   );
