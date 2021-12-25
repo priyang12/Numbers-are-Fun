@@ -32,31 +32,29 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.125);
   min-height: 150px;
 }
-#blackboard-primary {
+.board {
   color: #fff;
-  border: tan solid 20px;
-  /* background: url("../assets/bored-3.webp") no-repeat center/cover; */
+
   background-color: #333;
+  height: 100%;
+  z-index: 0;
+}
+#blackboard-primary {
+  border: tan solid 20px;
   border-top: #bda27e solid 20px;
   border-left: #b19876 solid 20px;
   border-bottom: #c9ad86 solid 20px;
   box-shadow: 0px 0px 6px 5px rgb(58 18 13 / 0%), 0px 0px 0px 2px #c2a782,
     0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgb(0 0 0 / 50%);
-  z-index: 0;
 }
 #blackboard-secondary {
-  color: #fff;
   justify-content: center;
-  height: 100%;
   border: #6fa58a solid 20px;
-  background-color: #333;
-  /* background: url("../assets/bored-3.webp") no-repeat center/cover; */
   border-top: #7ebda0 solid 20px;
   border-left: #76b1b1 solid 20px;
   border-bottom: #86aec9 solid 20px;
   box-shadow: 0px 0px 6px 5px rgb(58 18 13 / 0%), 0px 0px 0px 2px #86aec9,
     0px 0px 0px 4px #6fa5a2, 3px 4px 8px 5px rgb(0 0 0 / 50%);
-  z-index: 0;
 }
 input[type="number"] {
   background-color: transparent;
@@ -73,20 +71,6 @@ input[type="submit"] {
   background-color: transparent;
   color: #fff;
   box-shadow: 0px 5px 6px 5px rgb(58 18 13 / 0%);
-}
-.btn {
-  color: #fff;
-  background-color: #333;
-  max-width: 250px;
-  width: 100%;
-  font-size: 2rem;
-  padding: 0.5em 1em;
-  margin: 1em;
-  box-shadow: 0px 6px 4px 1px #fff;
-  transition: 1s all ease;
-}
-.btn:hover {
-  color: #fff;
 }
 
 #getFacts {
@@ -113,6 +97,9 @@ input[type="submit"] {
   }
 }
 @media only screen and (min-width: 600px) {
+  .board {
+    background: url("../assets/bored-3.webp") no-repeat center/cover;
+  }
   #inputValue:focus {
     margin: 1em;
   }
