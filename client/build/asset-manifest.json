@@ -1,29 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.1d816bf0.chunk.css",
-    "main.js": "/static/js/main.0068bfb1.chunk.js",
-    "main.js.map": "/static/js/main.0068bfb1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.26e6f206.js",
-    "runtime-main.js.map": "/static/js/runtime-main.26e6f206.js.map",
-    "static/js/2.df7e0a6a.chunk.js": "/static/js/2.df7e0a6a.chunk.js",
-    "static/js/2.df7e0a6a.chunk.js.map": "/static/js/2.df7e0a6a.chunk.js.map",
-    "static/js/3.2db17d77.chunk.js": "/static/js/3.2db17d77.chunk.js",
-    "static/js/3.2db17d77.chunk.js.map": "/static/js/3.2db17d77.chunk.js.map",
+    "main.css": "/static/css/main.649286ad.css",
+    "main.js": "/static/js/main.f8169370.js",
+    "static/js/324.0d37a025.chunk.js": "/static/js/324.0d37a025.chunk.js",
+    "static/media/horixonalpencil.webp": "/static/media/horixonalpencil.87af69e8d7764078f4c1.webp",
+    "static/media/bored-3.webp": "/static/media/bored-3.d7da9f0f4c7ad1dcb2ea.webp",
+    "static/media/diceGif.gif": "/static/media/diceGif.f14d5946e5e41e017995.gif",
+    "static/media/pastel crayon.woff": "/static/media/pastel crayon.c6b561f4600864707c20.woff",
+    "static/media/dropdown.png": "/static/media/dropdown.5d6f946c22058266b6d3.png",
+    "service-worker.js": "/service-worker.js",
+    "static/media/github-brands.svg": "/static/media/github-brands.f68725004c4cc16fe77d067b0b87ef66.svg",
+    "static/media/twitter-brands.svg": "/static/media/twitter-brands.cf7ebfc5c5fa698f3e7a640273804bbd.svg",
     "index.html": "/index.html",
-    "static/css/main.1d816bf0.chunk.css.map": "/static/css/main.1d816bf0.chunk.css.map",
-    "static/js/2.df7e0a6a.chunk.js.LICENSE.txt": "/static/js/2.df7e0a6a.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/static/media/bored-3.d7da9f0f.webp",
-    "static/media/diceGif.f14d5946.gif": "/static/media/diceGif.f14d5946.gif",
-    "static/media/dropdown.5d6f946c.png": "/static/media/dropdown.5d6f946c.png",
-    "static/media/github-brands.f6872500.svg": "/static/media/github-brands.f6872500.svg",
-    "static/media/index.css": "/static/media/pastel crayon.c6b561f4.woff",
-    "static/media/linkedin-brands.3b082c25.svg": "/static/media/linkedin-brands.3b082c25.svg",
-    "static/media/twitter-brands.cf7ebfc5.svg": "/static/media/twitter-brands.cf7ebfc5.svg"
+    "static/media/linkedin-brands.svg": "/static/media/linkedin-brands.3b082c2596cc4a773841d531f9ee483a.svg",
+    "main.649286ad.css.map": "/static/css/main.649286ad.css.map",
+    "main.f8169370.js.map": "/static/js/main.f8169370.js.map",
+    "324.0d37a025.chunk.js.map": "/static/js/324.0d37a025.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.26e6f206.js",
-    "static/js/2.df7e0a6a.chunk.js",
-    "static/css/main.1d816bf0.chunk.css",
-    "static/js/main.0068bfb1.chunk.js"
+    "static/css/main.649286ad.css",
+    "static/js/main.f8169370.js"
   ]
 }
