@@ -1,5 +1,6 @@
-import { screen, render } from '@testing-library/react';
-import Factslist from '../Components/Factslist';
+import { screen, render } from "@testing-library/react";
+import Factslist from "../Components/Factslist";
+import "@testing-library/jest-dom";
 
 const List = `{
   "0": "0 is the additive identity.",
@@ -11,9 +12,8 @@ const List = `{
  }`;
 
 const newList = JSON.parse(List);
-describe('List Test', () => {
-  it('check loading', () => {
-    render(<Factslist Facts={newList} />);
-    const container = screen.getByTestId('ListItems');
-  });
+
+it("check loading", () => {
+  render(<Factslist Facts={newList} />);
+  expect(screen.getByText(/0 is the additive identity./)).toBeInTheDocument();
 });

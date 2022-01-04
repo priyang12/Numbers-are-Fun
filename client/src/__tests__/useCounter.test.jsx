@@ -1,15 +1,14 @@
-import { act, renderHook } from '@testing-library/react-hooks';
-import { useCounter } from '../Hooks/useCounter';
+import { act, renderHook } from "@testing-library/react-hooks";
+import { useCounter } from "../utils/Hooks";
 
-describe('UseCounter Hook', () => {
-  it('Use hook init state', () => {
+describe("UseCounter Hook", () => {
+  it("Use hook init state", () => {
     const { result } = renderHook(() => useCounter(0));
-
     const [start, increment, decrement] = result.current;
     expect(start).toEqual(0);
   });
 
-  it('should increment counter', () => {
+  it("should increment counter", () => {
     const { result } = renderHook(() => useCounter(0));
     const [start, increment, decrement] = result.current;
     act(() => {
@@ -18,7 +17,7 @@ describe('UseCounter Hook', () => {
     expect(result.current[0]).toBe(1);
   });
 
-  it('should decremnt counter', () => {
+  it("should decremnt counter", () => {
     const { result } = renderHook(() => useCounter(0));
     const [start, increment, decrement] = result.current;
     act(() => {

@@ -1,4 +1,4 @@
-const Ramanurjan = ({ title, blockquote, Description }) => {
+const Mathematician = ({ title, blockquote, Description }) => {
   return (
     <div className='hero-container p-3'>
       <div className='Title '>
@@ -19,4 +19,4 @@ const Ramanurjan = ({ title, blockquote, Description }) => {
   );
 };
 
-export default Ramanurjan;
+export default Mathematician;

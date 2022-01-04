@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Board from "../utils/Board";
+import Board from "./Board";
 import "../Styles/List.css";
 
 const Factslist = ({ Facts }) => {

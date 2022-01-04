@@ -1,8 +1,8 @@
-import { Fragment, useState, useEffect } from 'react';
-import { useFetch } from '../utils/Hooks';
-import MultipleFacts from '../Components/MultipleFacts';
-import Factslist from '../Components/Factslist';
-import Dice from '../utils/DiceRoll';
+import { Fragment, useState, useEffect } from "react";
+import { useFetch } from "../utils/Hooks";
+import MultipleFacts from "../Components/MultipleFacts";
+import Factslist from "../Components/Factslist";
+import Dice from "../utils/DiceRoll";
 
 const Multiple = () => {
   const [JsonFacts, setJsonFacts] = useState(null);
@@ -20,7 +20,7 @@ const Multiple = () => {
       {loading || fact === null ? (
         <Dice />
       ) : Error ? (
-        <div>{Error && 'Server Timeout'}</div>
+        <div>{Error && "Server Timeout"}</div>
       ) : (
         <Factslist Facts={JsonFacts} />
       )}

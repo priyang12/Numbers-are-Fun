@@ -1,8 +1,8 @@
 import { Fragment, lazy, Suspense } from "react";
 import TitleName from "../Components/TitleName";
-import Board from "../utils/Board";
-import Dice from "../utils/DiceRoll";
+import Board from "../Components/Board";
 import RandomFacts from "../Components/RandomFacts";
+import Dice from "../utils/DiceRoll";
 
 const RandomFactsLazy = lazy(() => import("../Components/RandomFacts"));
 

@@ -1,7 +1,7 @@
-import SingleFact from '../Components/SingleFact';
-import Board from '../utils/Board';
-import TitleName from '../Components/TitleName';
-import { Fragment } from 'react';
+import SingleFact from "../Components/SingleFact";
+import Board from "../Components/Board";
+import TitleName from "../Components/TitleName";
+import { Fragment } from "react";
 
 const Single = () => {
   return (

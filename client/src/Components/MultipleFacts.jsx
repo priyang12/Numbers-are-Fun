@@ -1,4 +1,4 @@
-import Board from "../utils/Board";
+import Board from "./Board";
 import Header from "./Navbar";
 import Down from "../assets/dropdown.png";
 import { useCounter } from "../utils/Hooks";
@@ -25,7 +25,7 @@ const MultipleFacts = ({ seturl }) => {
     seturl(`?ApiCall=${start}..${end}/year`);
   };
   return (
-    <div id='radomFacts' className='containe' data-testid='multirandom'>
+    <div id='radomFacts' className='container'>
       <Board>
         <Header Title='Multiple Numbers' />
         <div
@@ -57,7 +57,7 @@ const MultipleFacts = ({ seturl }) => {
             <button
               type='button'
               id='math'
-              className='btn  '
+              className='btn'
               onClick={mathSelect}
             >
               Math
@@ -65,7 +65,7 @@ const MultipleFacts = ({ seturl }) => {
             <button
               type='button'
               id='trivia'
-              className='btn '
+              className='btn'
               onClick={triviaSelect}
             >
               Trivia
@@ -73,7 +73,7 @@ const MultipleFacts = ({ seturl }) => {
             <button
               type='button'
               id='year'
-              className='btn '
+              className='btn'
               onClick={yearSelect}
             >
               Year

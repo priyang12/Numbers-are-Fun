@@ -1,12 +1,12 @@
-import { Link, useLocation } from 'react-router-dom';
-import Board from '../utils/Board';
+import { Link, useLocation } from "react-router-dom";
+import Board from "./Board";
 
 const Links = () => {
   const Path = useLocation().pathname;
   return (
     <nav className='mx-auto navigator '>
       <ul className='d-flex flex-column flex-md-row align-items-center justify-content-around p-4 text-center'>
-        {Path !== '/' && (
+        {Path !== "/" && (
           <Board type='primary'>
             <li className='list-group-item mx-3 h1 bg-transparent '>
               <Link to='/' className='text-light'>
@@ -15,7 +15,7 @@ const Links = () => {
             </li>
           </Board>
         )}
-        {Path !== '/Random' && (
+        {Path !== "/Random" && (
           <Board type='secondary'>
             <li className='list-group-item mx-3 h1 bg-transparent '>
               <Link to='Random' className='text-light'>
@@ -24,7 +24,7 @@ const Links = () => {
             </li>
           </Board>
         )}
-        {Path !== '/Multiple' && (
+        {Path !== "/Multiple" && (
           <Board type='primary'>
             <li className='list-group-item mx-3 h1 bg-transparent'>
               <Link to='Multiple' className='text-light'>
@@ -33,7 +33,7 @@ const Links = () => {
             </li>
           </Board>
         )}
-        {Path !== '/Math' && (
+        {Path !== "/Math" && (
           <Board type='secondary'>
             <li className='list-group-item  h1 bg-transparent'>
               <Link to='Math' className='text-light'>
