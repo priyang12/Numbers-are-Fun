@@ -1,19 +1,43 @@
-.start :first-child,
-.start :last-child,
-.end :first-child,
-.end :last-child {
+.arrow {
   cursor: pointer;
-  background-color: #fff;
-  border-radius: 20px;
-  margin: 10px;
-  color: #333;
-  height: 1em;
+  height: 2em;
+  color: #fff;
+  border-radius: 15px;
   transition: all 0.5s ease;
 }
-.start :first-child:hover,
-.start :last-child:hover,
-.end :first-child:hover,
-.end :last-child:hover {
+.arrow:hover {
   background-color: #333;
   color: #fff;
+}
+
+input[type="number"] {
+  background-color: transparent;
+  border: none;
+  transition: all 1s ease;
+  border-bottom: 2px solid rgb(255, 230, 230);
+  color: #fff;
+  height: 50%;
+  text-align: center;
+  font-size: 2rem;
+  width: 50%;
+}
+input[type="number"]:focus {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media screen and (min-width: 500px) {
+  input[type="number"] {
+    width: 30%;
+  }
 }

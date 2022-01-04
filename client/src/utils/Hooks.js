@@ -5,7 +5,8 @@ export const useCounter = (initialState) => {
   const [count, setCount] = useState(initialState);
   const increment = useCallback(() => setCount((x) => x + 1), []);
   const decrement = useCallback(() => setCount((x) => x - 1), []);
-  return [count, increment, decrement];
+
+  return { count, setCount, increment, decrement };
 };
 
 export const useFetch = (url) => {
@@ -32,7 +33,6 @@ export const useFetch = (url) => {
         }, 1000);
       }
     };
-    console.log(start);
     fetchData();
     return () => {
       start.current = null;

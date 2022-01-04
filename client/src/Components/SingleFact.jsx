@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { useFetch, useCounter } from "../utils/Hooks";
+import { useFetch } from "../utils/Hooks";
+import InputNumber from "./InputNumber";
 import PropTypes from "prop-types";
-import "../Styles/NumberInput.css";
 
 const GetFact = ({ type }) => {
-  const [url, seturl] = useState(`?ApiCall=0/${type}`);
-  const [start, incrementStart, decrementStart] = useCounter(0);
+  const [url, setUrl] = useState(`?ApiCall=0/${type}`);
+
+  const [Number, SetNumber] = useState(0);
+
   const { loading, Error, fact } = useFetch(url);
-  const onClick = (e) => {
+
+  const FindFact = (e) => {
     e.preventDefault();
-    if (url !== `?ApiCall=${start}/${type}`) {
-      seturl(`?ApiCall=${start}/${type}`);
+    //check if not same number
+    if (url !== `?ApiCall=${Number}/${type}`) {
+      setUrl(`?ApiCall=${Number}/${type}`);
     }
   };
 
   return (
-    <form
-      id='getFacts'
-      className='m-2 d-flex flex-column flex-md-row align-items-start justify-content-center'
-      data-testid='FactTestId'
-    >
-      <div id='Facts' className='display-4 '>
+    <form id='getFacts' className='m-2'>
+      <div id='Facts' className='display-4 w-100'>
         {loading ? (
           <div className='loading' data-testid='loader'>
             Wait For IT
@@ -31,10 +31,7 @@ const GetFact = ({ type }) => {
           <div>{fact}</div>
         )}
       </div>
-      <div
-        className='d-flex align-items-center justify-content-center flex-wrap'
-        data-testid='form-test'
-      >
+      <div className='d-flex align-items-center justify-content-center flex-wrap'>
         <label
           htmlFor={type}
           className='display-6 order-2 flex-fill text-center'
@@ -42,16 +39,14 @@ const GetFact = ({ type }) => {
           /{type}
         </label>
 
-        <div className='d-flex align-items-center p-3 display-2 start'>
-          <div onClick={decrementStart}>{"<"}</div>
-          <div>{start}</div>
-          <div onClick={incrementStart}>{">"}</div>
+        <div className='d-flex align-items-center p-3 display-2 '>
+          <InputNumber SetNumber={SetNumber} />
         </div>
 
         <div
           type='submit'
           className='order-3 p-3 display-5 border m-3'
-          onClick={onClick}
+          onClick={FindFact}
         >
           Find
         </div>

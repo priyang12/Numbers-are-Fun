@@ -1,12 +1,12 @@
 import Board from "./Board";
 import Header from "./Navbar";
 import Down from "../assets/dropdown.png";
-import { useCounter } from "../utils/Hooks";
-import "../Styles/NumberInput.css";
+import InputNumber from "./InputNumber";
+import { useState } from "react";
 
-const MultipleFacts = ({ seturl }) => {
-  const [start, incrementStart, decrementStart] = useCounter(0);
-  const [end, incrementEnd, decrementEnd] = useCounter(5);
+const MultipleFacts = ({ setUrl }) => {
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(5);
 
   const checkValue = (beg, to) => {
     if (beg - to > 99) return false;
@@ -14,41 +14,38 @@ const MultipleFacts = ({ seturl }) => {
   };
   const mathSelect = () => {
     checkValue(start, end);
-    seturl(`?ApiCall=${start}..${end}/math`);
+    setUrl(`?ApiCall=${start}..${end}/math`);
   };
   const triviaSelect = () => {
     checkValue(start, end);
-    seturl(`?ApiCall=${start}..${end}/trivia`);
+    setUrl(`?ApiCall=${start}..${end}/trivia`);
   };
   const yearSelect = () => {
     checkValue(start, end);
-    seturl(`?ApiCall=${start}..${end}/year`);
+    setUrl(`?ApiCall=${start}..${end}/year`);
   };
   return (
     <div id='radomFacts' className='container'>
       <Board>
         <Header Title='Multiple Numbers' />
+        <h1 className='display-3 mx-5'>Select Range</h1>
         <div
           id='range'
-          className='display-1 d-flex flex-column flex-md-row  align-items-center justify-content-around mt-2 '
+          className='display-1  d-flex flex-column flex-md-row  align-items-center justify-content-around  mt-2 '
         >
-          <h1>
-            Select Range
-            <p className='h4'>Between Diffrence of 100</p>
-          </h1>
+          <div className='mx-5'>
+            <p className='h4'>Between Difference of 100</p>
+          </div>
           <h4>Start</h4>
-          <div className='d-flex align-items-center start'>
-            <div onClick={decrementStart}>{"<"}</div>
-            <div>{start}</div>
-            <div onClick={incrementStart}>{">"}</div>
+          <div className='d-flex align-items-center justify-content-around'>
+            <InputNumber SetNumber={setStart} />
           </div>
           <h4>End</h4>
-          <div className='d-flex align-items-center end'>
-            <div onClick={decrementEnd}>{"<"}</div>
-            <div>{end}</div>
-            <div onClick={incrementEnd}>{">"}</div>
+          <div className='d-flex align-items-center justify-content-around  '>
+            <InputNumber SetNumber={setEnd} />
           </div>
         </div>
+
         <div className='d-flex'>
           <div
             id='randomType'
@@ -57,7 +54,7 @@ const MultipleFacts = ({ seturl }) => {
             <button
               type='button'
               id='math'
-              className='btn'
+              className='btn-secondary my-3  p-2  md:w-50 '
               onClick={mathSelect}
             >
               Math
@@ -65,7 +62,7 @@ const MultipleFacts = ({ seturl }) => {
             <button
               type='button'
               id='trivia'
-              className='btn'
+              className='btn-secondary my-3  p-2  md:w-50 '
               onClick={triviaSelect}
             >
               Trivia
@@ -73,13 +70,13 @@ const MultipleFacts = ({ seturl }) => {
             <button
               type='button'
               id='year'
-              className='btn'
+              className='btn-secondary my-3  p-2  md:w-50 '
               onClick={yearSelect}
             >
               Year
             </button>
           </div>
-          <div className='container mt-5 d-sm-none d-md-none d-lg-block'>
+          <div className='container mt-5  d-none d-lg-block'>
             <img src={Down} alt='Look Down' />
           </div>
         </div>
