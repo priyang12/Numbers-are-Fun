@@ -1,6 +1,6 @@
 # Numbers are Fun Web App / PWA
 
-[Link](https://tales-of-numbers-git-master-priyang12.vercel.app/Random "WebApp Link")
+[Link To WebApp](https://tales-of-numbers-git-master-priyang12.vercel.app/Random "WebApp Link")
 
 
 ## It is App where you can get some small information about the perticular number.
