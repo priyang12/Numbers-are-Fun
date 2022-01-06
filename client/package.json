@@ -44,6 +44,6 @@
   "description": "Runs the app in the development mode.\\\r Open [http://localhost:3000](http://localhost:3000) to view it in the browser.",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Priyang",
   "license": "ISC"
 }
