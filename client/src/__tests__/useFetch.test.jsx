@@ -1,17 +1,19 @@
 import { useFetch } from "../utils/Hooks";
-import { renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
 it("test for data check", async () => {
   const mock = new MockAdapter(axios);
   const mockData = "response";
-  const url = "http://numbersapi.com/2/math";
+  const url = "http://numbersapi.com/0/math";
   mock.onGet(url).reply(200, mockData);
 
-  const { result, waitForNextUpdate } = renderHook(() => useFetch(url));
-  waitForNextUpdate();
-  expect(result.current.fact).toMatch(/response/);
+  const { result } = renderHook(() => useFetch(url));
+  await act(async () => {
+    result.current.fact();
+    expect(result.current.fact).toMatch(/response/);
+  });
 });
 
 it("test for Error check", async () => {

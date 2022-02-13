@@ -1,24 +1,22 @@
-import { Fragment } from "react";
 import LeftArrowImg from "../assets/LeftArrow.png";
 import RightArrowImg from "../assets/RightArrow.png";
 import { useCounter } from "../utils/Hooks";
-import "../Styles/NumberInput.css";
+import Style from "./Styles/NumberInput.module.css";
 
 const InputNumber = ({ SetNumber }) => {
   const { increment, decrement, count, setCount } = useCounter(0);
   SetNumber(count);
   return (
-    <Fragment>
+    <div className={Style.Container}>
       <img
         src={LeftArrowImg}
         alt='left arrow'
         onClick={decrement}
-        className='arrow'
+        className={Style.Arrow}
       />
-
       <input
         type='number'
-        className='InputNumber'
+        className={Style.InputNumber}
         data-testid='input-number'
         value={count}
         onChange={(e) => {
@@ -26,14 +24,13 @@ const InputNumber = ({ SetNumber }) => {
           console.log("Onchange");
         }}
       />
-
       <img
         src={RightArrowImg}
         alt='right arrow'
         onClick={increment}
-        className='arrow'
+        className={Style.Arrow}
       />
-    </Fragment>
+    </div>
   );
 };
 

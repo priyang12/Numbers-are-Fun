@@ -1,44 +1,37 @@
+import Style from "./Styles/Navigator.module.css";
 import { Link, useLocation } from "react-router-dom";
 import Board from "./Board";
 
 const Links = () => {
   const Path = useLocation().pathname;
   return (
-    <nav className='mx-auto navigator '>
-      <ul className='d-flex flex-column flex-md-row align-items-center justify-content-around p-4 text-center'>
+    <nav className={Style.navigator}>
+      <ul className={Style.list}>
         {Path !== "/" && (
           <Board type='primary'>
-            <li className='list-group-item mx-3 h1 bg-transparent '>
-              <Link to='/' className='text-light'>
-                Single Numbers
-              </Link>
+            <li className={Style.item}>
+              <Link to='/'>Single Numbers</Link>
             </li>
           </Board>
         )}
         {Path !== "/Random" && (
           <Board type='secondary'>
-            <li className='list-group-item mx-3 h1 bg-transparent '>
-              <Link to='Random' className='text-light'>
-                Random Numnbers
-              </Link>
+            <li className={Style.item}>
+              <Link to='Random'>Random Numnbers</Link>
             </li>
           </Board>
         )}
         {Path !== "/Multiple" && (
           <Board type='primary'>
-            <li className='list-group-item mx-3 h1 bg-transparent'>
-              <Link to='Multiple' className='text-light'>
-                Multiple Numbers
-              </Link>
+            <li className={Style.item}>
+              <Link to='Multiple'>Multiple Numbers</Link>
             </li>
           </Board>
         )}
         {Path !== "/Math" && (
           <Board type='secondary'>
-            <li className='list-group-item  h1 bg-transparent'>
-              <Link to='Math' className='text-light'>
-                Mathematicians Tale
-              </Link>
+            <li className={Style.item}>
+              <Link to='Math'>Mathematicians Tale</Link>
             </li>
           </Board>
         )}

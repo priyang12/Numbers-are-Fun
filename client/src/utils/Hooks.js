@@ -10,26 +10,25 @@ export const useCounter = (initialState) => {
 };
 
 export const useFetch = (url) => {
-  const [loading, setloading] = useState(false);
-  const [fact, setfact] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [fact, setFact] = useState(null);
   const [Error, setError] = useState(null);
   const start = useRef(true);
   useEffect(() => {
     let fetchData = async () => {
+      console.log("API CALL");
       try {
-        setloading(true);
-        console.log("API CALL");
+        setLoading(true);
         const { data } = await axios.get("/api" + url);
-        console.log(data);
-        setfact(data);
+        setFact(data);
         setError(null);
       } catch (error) {
         const err = error.response?.data || "SERVER ERROR";
         setError(err);
-        setfact(null);
+        setFact(null);
       } finally {
         setTimeout(() => {
-          setloading(false);
+          setLoading(false);
         }, 1000);
       }
     };

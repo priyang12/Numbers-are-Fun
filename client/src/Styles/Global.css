@@ -32,12 +32,32 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.125);
   min-height: 150px;
 }
+.Loading {
+  display: flex;
+  justify-content: center;
+}
+.pointer {
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  transition: 0.5s all ease-in;
+}
+.pointer:focus,
+.pointer:hover,
+.pointer:active {
+  outline: none;
+  margin-top: 0.5 em;
+  background-color: #7c7272;
+}
+.container {
+}
 .board {
   color: #fff;
   background-color: #333;
   height: 100%;
   z-index: 0;
 }
+
 #blackboard-primary {
   border: tan solid 20px;
   border-top: #bda27e solid 20px;
@@ -62,27 +82,14 @@ input[type="submit"] {
   box-shadow: 0px 5px 6px 5px rgb(58 18 13 / 0%);
 }
 
-#getFacts {
-  border-bottom: 5px dotted #ddd;
-}
-#getFacts:last-child {
-  border: none;
-}
-
 @media only screen and (min-width: 1200px) {
   #inputValue:focus {
     margin: 2em;
-  }
-  #Facts {
-    width: 50%;
   }
 }
 @media only screen and (min-width: 800px) {
   #inputValue:focus {
     margin: 1em;
-  }
-  #Facts {
-    width: 50%;
   }
 }
 @media only screen and (min-width: 600px) {

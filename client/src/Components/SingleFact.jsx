@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFetch } from "../utils/Hooks";
 import InputNumber from "./InputNumber";
+import Style from "./Styles/SingleFact.module.css";
 import PropTypes from "prop-types";
 
 const GetFact = ({ type }) => {
@@ -19,35 +20,24 @@ const GetFact = ({ type }) => {
   };
 
   return (
-    <form id='getFacts' className='m-2'>
-      <div id='Facts' className='display-4 w-100'>
+    <form className={Style.single}>
+      <div className={Style.Fact}>
         {loading ? (
-          <div className='loading' data-testid='loader'>
-            Wait For IT
+          <div className='Loading' data-testid='loader'>
+            Wait For IT.....
           </div>
         ) : Error ? (
-          <div className='error'>'Server Timeout'</div>
+          <div className='Error'>'Server Timeout'</div>
         ) : (
           <div>{fact}</div>
         )}
       </div>
-      <div className='d-flex align-items-center justify-content-center flex-wrap'>
-        <label
-          htmlFor={type}
-          className='display-6 order-2 flex-fill text-center'
-        >
+      <div className={Style.SelectNumber}>
+        <InputNumber SetNumber={SetNumber} />
+        <label htmlFor={type} className={Style.Type}>
           /{type}
         </label>
-
-        <div className='d-flex align-items-center p-3 display-2 '>
-          <InputNumber SetNumber={SetNumber} />
-        </div>
-
-        <div
-          type='submit'
-          className='order-3 p-3 display-5 border m-3'
-          onClick={FindFact}
-        >
+        <div type='submit' className='pointer' onClick={FindFact}>
           Find
         </div>
       </div>

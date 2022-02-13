@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Board from "./Board";
 import "../Styles/List.css";
 
-const Factslist = ({ Facts }) => {
+const FactsList = ({ Facts }) => {
   const [ArrayFacts, setArrayFacts] = useState([]);
   useEffect(() => {
     for (const i in Facts) {
@@ -26,4 +26,4 @@ const Factslist = ({ Facts }) => {
   );
 };
 
-export default Factslist;
+export default FactsList;

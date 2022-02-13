@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import { useFetch } from "../utils/Hooks";
 import MultipleFacts from "../Components/MultipleFacts";
-import Factslist from "../Components/Factslist";
+import FactsList from "../Components/FactsList";
 import Dice from "../utils/DiceRoll";
 
 const Multiple = () => {
@@ -22,7 +22,7 @@ const Multiple = () => {
       ) : Error ? (
         <div>{Error && "Server Timeout"}</div>
       ) : (
-        <Factslist Facts={JsonFacts} />
+        <FactsList Facts={JsonFacts} />
       )}
     </Fragment>
   );
