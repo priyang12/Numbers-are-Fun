@@ -1,0 +1,27 @@
+.navigator {
+  width: 80%;
+  margin: 0 auto;
+}
+.list {
+  flex-direction: column;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+}
+.item {
+  font-size: 3rem;
+  padding: 1em;
+  margin: 0 auto;
+}
+.item a {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .list {
+    flex-direction: row;
+  }
+}
