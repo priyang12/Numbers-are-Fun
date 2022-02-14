@@ -1,7 +1,15 @@
-import DiceGif from '../assets/diceGif.gif';
+import DiceGif from "../assets/diceGif.gif";
+
+const style = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
 const Dice = () => {
   return (
-    <div className=' d-flex justify-content-center'>
+    <div style={style}>
       <img src={DiceGif} alt='Loading' />
     </div>
   );

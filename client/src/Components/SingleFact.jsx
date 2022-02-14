@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFetch } from "../utils/Hooks";
 import InputNumber from "./InputNumber";
-import Style from "./Styles/SingleFact.module.css";
+import Style from "./Styles/Fact.module.css";
 import PropTypes from "prop-types";
 
 const GetFact = ({ type }) => {

@@ -1,0 +1,111 @@
+.single {
+  margin: 0.5em;
+  text-align: center;
+  font-size: 5rem;
+}
+.Random {
+  font-size: 3rem;
+  padding: 1em 0.5em;
+}
+.Type {
+  font-size: 3.5rem;
+}
+.Fact {
+  margin-top: 2rem;
+  width: 90%;
+}
+.RandomBtn {
+  margin-top: 1rem;
+  font-size: 2rem;
+  padding: 1em;
+  width: 80%;
+  margin-left: auto;
+}
+.Title {
+  font-size: 3rem;
+  text-align: center;
+}
+.Range {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.SubTitle p {
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 1em;
+}
+.Flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ButtonFlex {
+  text-align: center;
+  width: 100%;
+}
+.TypeBtn {
+  background-color: #776767;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 0.5rem;
+  width: 70%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s all ease-in;
+}
+.TypeBtn:focus,
+.TypeBtn:hover,
+.TypeBtn:active {
+  outline: none;
+  margin-top: 0.5em;
+  background-color: #333;
+}
+.Logo {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .Logo {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .single {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .Random {
+    font-size: 5rem;
+    padding: 1em 0.5em;
+  }
+
+  .SubTitle p {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1em;
+  }
+  .ButtonFlex {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Desktop Size */
+@media screen and (min-width: 1200px) {
+  .Range {
+    display: flex;
+    font-size: 5rem;
+    text-align: left;
+  }
+  .TypeBtn {
+    width: 30%;
+  }
+}

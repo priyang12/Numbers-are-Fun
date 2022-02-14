@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Board from "./Board";
-import "../Styles/List.css";
+import Style from "./Styles/List.module.css";
 
 const FactsList = ({ Facts }) => {
   const [ArrayFacts, setArrayFacts] = useState([]);
@@ -13,10 +13,10 @@ const FactsList = ({ Facts }) => {
   return (
     <div className='mt-5'>
       <Board type='secondary'>
-        <ul className='list' data-testid='ListItems'>
+        <ul className={Style.list} data-testid='ListItems'>
           {ArrayFacts.length > 0 &&
             ArrayFacts.map((item, index) => (
-              <li className='list-item' key={index}>
+              <li className={Style.listItem} key={index}>
                 {item}
               </li>
             ))}

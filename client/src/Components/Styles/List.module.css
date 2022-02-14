@@ -1,21 +1,22 @@
 .list {
   height: 100%;
   max-height: 12160px;
-  padding: 0.5em;
+  padding: 4em;
   list-style-type: none;
 }
-.list-item {
+.listItem {
   padding-left: 1em;
   font-size: 2rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding: 1em;
 }
-.list-item:nth-child(odd) {
+.listItem:nth-child(odd) {
   color: #f2f1ef;
   background-color: #6e304b;
   margin: 0.5em 0;
 }
-.list-item:nth-child(even) {
+.listItem:nth-child(even) {
   color: #e2ae6c;
   background-color: #22161c;
 }

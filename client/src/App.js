@@ -28,7 +28,7 @@ function App() {
           <Route exact path='/Math' component={Mathematicians} />
           <Route path='*' component={NotFound} />
         </Switch>
-        {/* <Footer links={SocialLinks} /> */}
+        <Footer links={SocialLinks} />
       </Router>
     </div>
   );

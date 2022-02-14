@@ -1,7 +1,11 @@
-import Style from "./Styles/Header.module.css";
+const Style = {
+  fontSize: "5rem",
+  textAlign: "center",
+  paddingTop: "1em",
+};
 
 const Header = ({ Title }) => {
-  return <header className={Style.Header}>{Title}</header>;
+  return <header style={Style}>{Title}</header>;
 };
 
 export default Header;

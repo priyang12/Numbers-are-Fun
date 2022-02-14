@@ -3,33 +3,25 @@ import { useFetch } from "../utils/Hooks";
 import PropTypes from "prop-types";
 import Dice from "../utils/DiceRoll";
 
+import Style from "./Styles/Fact.module.css";
+
 const RandomFacts = ({ type }) => {
-  const [url, seturl] = useState(`?ApiCall=random/${type}`);
+  const [url, setUrl] = useState(`?ApiCall=random/${type}`);
   const { loading, Error, fact } = useFetch(url);
   const onsubmit = (e) => {
     e.preventDefault();
-    seturl(`?ApiCall=${Math.floor(Math.random() * 100)}/${type}`);
+    setUrl(`?ApiCall=${Math.floor(Math.random() * 100)}/${type}`);
   };
-
+  console.log(fact);
   return (
-    <div
-      id='getRandomFacts'
-      className='m-2 text-center'
-      data-testid='FactTestId'
-    >
-      <form
-        className='d-flex align-items-center justify-content-center inputfield'
-        onSubmit={onsubmit}
-      >
-        <label htmlFor={type} className='display-6 order-2'>
-          /{type}
-        </label>
-        <input type='submit' value='Random' className=' order-1 m-3' />
+    <div className={Style.Random}>
+      <form onSubmit={onsubmit}>
+        <input type='submit' value='Random' className={Style.RandomBtn} />
+        <label htmlFor={type}>/{type}</label>
       </form>
-      {/* //DATA */}
-      <div id='RandomFacts' className='display-4 '>
+      <article className={Style.Fact}>
         {loading ? <Dice /> : Error ? "Server Timeout" : fact}
-      </div>
+      </article>
     </div>
   );
 };

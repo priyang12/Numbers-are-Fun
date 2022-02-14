@@ -3,7 +3,8 @@ import Header from "./Header";
 import Down from "../assets/dropdown.png";
 import InputNumber from "./InputNumber";
 import { useState } from "react";
-import Style from "./Styles/MultipleFacts.module.css";
+
+import Style from "./Styles/Fact.module.css";
 
 const MultipleFacts = ({ setUrl }) => {
   const [start, setStart] = useState(0);
@@ -30,7 +31,7 @@ const MultipleFacts = ({ setUrl }) => {
       <Header Title='Multiple Numbers' />
       <h1 className={Style.Title}>Select Range</h1>
       <div className={Style.Range}>
-        <div className='mx-5'>
+        <div className={Style.SubTitle}>
           <p>Between Difference of 100</p>
         </div>
         <h4>Start</h4>
@@ -43,8 +44,8 @@ const MultipleFacts = ({ setUrl }) => {
         </div>
       </div>
 
-      <div className='d-flex'>
-        <div className={Style.Flex}>
+      <div style={{ display: "flex" }}>
+        <div className={Style.ButtonFlex}>
           <button id='math' className={Style.TypeBtn} onClick={mathSelect}>
             Math
           </button>
