@@ -1,5 +1,6 @@
 import Board from "./Board";
 import Header from "./Header";
+import Down from "../assets/dropdown.png";
 import InputNumber from "./InputNumber";
 import { useState } from "react";
 
@@ -55,7 +56,9 @@ const MultipleFacts = ({ setUrl }) => {
             Year
           </button>
         </div>
-        <div className={Style.Logo}></div>
+        <div className={Style.Logo}>
+          <img src={Down} alt='Look Down' />
+        </div>
       </div>
     </Board>
   );
