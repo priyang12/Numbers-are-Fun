@@ -6,6 +6,8 @@
     "start": "node proxy-server.js",
     "server": "nodemon proxy-server.js",
     "client": "npm start --prefix client",
+    "InstallCommand": "npm install && npm install --prefix client",
+    "ClientBuild": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
