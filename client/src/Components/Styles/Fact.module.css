@@ -1,7 +1,7 @@
 .single {
   margin: 0.5em;
   text-align: center;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 .Random {
   font-size: 3rem;
@@ -29,15 +29,15 @@
   font-size: 1.5rem;
   text-align: center;
 }
-
+.line {
+  border-bottom: #fff dotted 10px;
+}
 .SubTitle p {
-  font-size: 3rem;
   font-weight: bold;
   padding: 1em;
 }
 .Flex {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -80,6 +80,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 5rem;
   }
   .Random {
     font-size: 5rem;
@@ -88,8 +89,6 @@
 
   .SubTitle p {
     font-size: 3rem;
-    font-weight: bold;
-    padding: 1em;
   }
   .ButtonFlex {
     width: 50%;

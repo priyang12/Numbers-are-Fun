@@ -8,32 +8,40 @@ const Links = () => {
     <nav className={Style.navigator}>
       <ul className={Style.list}>
         {Path !== "/" && (
-          <Board type='primary'>
-            <li className={Style.item}>
-              <Link to='/'>Single Numbers</Link>
-            </li>
-          </Board>
+          <div className={Style.Board}>
+            <Board type='primary'>
+              <li className={Style.item}>
+                <Link to='/'>Single Numbers</Link>
+              </li>
+            </Board>
+          </div>
         )}
         {Path !== "/Random" && (
-          <Board type='secondary'>
-            <li className={Style.item}>
-              <Link to='Random'>Random Numnbers</Link>
-            </li>
-          </Board>
+          <div className={Style.Board}>
+            <Board type='secondary'>
+              <li className={Style.item}>
+                <Link to='Random'>Random Numnbers</Link>
+              </li>
+            </Board>
+          </div>
         )}
         {Path !== "/Multiple" && (
-          <Board type='primary'>
-            <li className={Style.item}>
-              <Link to='Multiple'>Multiple Numbers</Link>
-            </li>
-          </Board>
+          <div className={Style.Board}>
+            <Board type='primary'>
+              <li className={Style.item}>
+                <Link to='Multiple'>Multiple Numbers</Link>
+              </li>
+            </Board>
+          </div>
         )}
         {Path !== "/Math" && (
-          <Board type='secondary'>
-            <li className={Style.item}>
-              <Link to='Math'>Mathematicians Tale</Link>
-            </li>
-          </Board>
+          <div className={Style.Board}>
+            <Board type='secondary'>
+              <li className={Style.item}>
+                <Link to='Math'>Mathematicians Tale</Link>
+              </li>
+            </Board>
+          </div>
         )}
       </ul>
     </nav>

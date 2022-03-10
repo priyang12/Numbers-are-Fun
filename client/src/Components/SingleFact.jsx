@@ -41,6 +41,7 @@ const GetFact = ({ type }) => {
           Find
         </div>
       </div>
+      <div className={Style.line}></div>
     </form>
   );
 };

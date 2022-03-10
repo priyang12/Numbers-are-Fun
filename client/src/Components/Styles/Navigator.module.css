@@ -1,3 +1,6 @@
+.Board {
+  width: 100%;
+}
 .navigator {
   width: 80%;
   margin: 0 auto;
@@ -14,12 +17,13 @@
   font-size: 3rem;
   padding: 0.5em;
   margin: 0 auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .item a {
+  color: #fff;
   text-align: center;
   text-decoration: none;
-  color: #fff;
-  text-overflow: ellipsis;
 }
 @media screen and (min-width: 900px) {
   .item {
