@@ -25,7 +25,7 @@ app.get("/api", (req, res) => {
 //static for Browser
 const _dirname = path.resolve();
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "/client/build")));
 
   app.get("*", (req, res) =>

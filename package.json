@@ -6,7 +6,9 @@
     "start": "node proxy-server.js",
     "server": "nodemon proxy-server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "clientProd": "npm start Production --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prodDev": "concurrently \"npm run server\" \"npm run clientProd\""
   },
   "keywords": [],
   "author": "Priyang",
