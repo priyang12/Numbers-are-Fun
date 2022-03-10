@@ -12,7 +12,6 @@ const RandomFacts = ({ type }) => {
     e.preventDefault();
     setUrl(`?ApiCall=${Math.floor(Math.random() * 100)}/${type}`);
   };
-  console.log(fact);
   return (
     <div className={Style.Random}>
       <form onSubmit={onsubmit}>

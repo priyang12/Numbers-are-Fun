@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "Production": "yarn serve -s build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "Production": "yarn serve -s build"
   },
   "eslintConfig": {
     "extends": [

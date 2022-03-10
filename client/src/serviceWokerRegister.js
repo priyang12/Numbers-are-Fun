@@ -1,6 +1,3 @@
-import { precacheAndRoute, matchPrecache } from "workbox-precaching";
-import { setCatchHandler } from "workbox-routing";
-
 const isLocalhost = Boolean(
   window.location.hostname === "localhost" ||
     // [::1] is the IPv6 localhost address.
@@ -14,6 +11,7 @@ const isLocalhost = Boolean(
 export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     // The URL constructor is available in all browsers that support SW.
+    console.log("Inside register");
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {
       return;
@@ -110,7 +108,6 @@ function checkValidServiceWorker(swUrl, config) {
       }
     })
     .catch(() => {
-      setCatchHandler();
       console.log(
         "No internet connection found. App is running in offline mode."
       );
@@ -128,10 +125,3 @@ export function unregister() {
       });
   }
 }
-setCatchHandler(async ({ event }) => {
-  if (event.request.destination === "document") {
-    return matchPrecache("/offline.html");
-  }
-
-  return Response.error();
-});
