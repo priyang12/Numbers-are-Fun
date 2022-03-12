@@ -3,14 +3,12 @@ import Header from "./Components/Header";
 import Navigator from "./Components/Navigator";
 import Single from "./Pages/Single";
 import Random from "./Pages/Random";
+import NotFound from "./Pages/NotFound";
 import Multiple from "./Pages/Multiple";
 import Mathematicians from "./Pages/Mathematicians";
 import Footer from "./Components/Footer";
 
 function App() {
-  const NotFound = () => {
-    return <div className='p-5 text-light display-1 bg-black'>NotFound</div>;
-  };
   const SocialLinks = {
     linkedin: "https://www.linkedin.com/in/priyang-patel-948685176",
     github: "https://github.com/priyang12",
