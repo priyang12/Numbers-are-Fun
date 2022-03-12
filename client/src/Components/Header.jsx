@@ -1,7 +1,7 @@
 const Style = {
   fontSize: "5rem",
   textAlign: "center",
-  paddingTop: "1em",
+  paddingTop: "0.5em",
   textOverflow: "ellipsis",
   overflow: "hidden",
 };
