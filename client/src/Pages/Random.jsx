@@ -1,8 +1,8 @@
-import { Fragment, lazy, Suspense } from "react";
+import { Fragment, lazy, Profiler, Suspense } from "react";
 import TitleName from "../Components/TitleName";
 import Board from "../Components/Board";
 import RandomFacts from "../Components/RandomFacts";
-import Dice from "../utils/DiceRoll";
+import ProfilerComponent from "../Components/ProfilerComponent";
 
 const RandomFactsLazy = lazy(() => import("../Components/RandomFacts"));
 
@@ -11,16 +11,18 @@ const Random = () => {
     <Fragment>
       <Board>
         <TitleName title='Random Numbers' />
-        <RandomFacts type='math' />
+        <ProfilerComponent id='multiple'>
+          <RandomFacts type='math' />
+        </ProfilerComponent>
       </Board>
       <br />
-      <Suspense fallback={Dice}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Board>
           <RandomFactsLazy type='trivia' />
         </Board>
       </Suspense>
       <br />
-      <Suspense fallback={Dice}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Board>
           <RandomFactsLazy type='year' />
         </Board>

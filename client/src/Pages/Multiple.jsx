@@ -2,6 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import { useFetch } from "../utils/Hooks";
 import MultipleFacts from "../Components/MultipleFacts";
 import FactsList from "../Components/FactsList";
+import ProfilerComponent from "../Components/ProfilerComponent";
 import Dice from "../utils/DiceRoll";
 
 const Multiple = () => {
@@ -16,14 +17,16 @@ const Multiple = () => {
 
   return (
     <Fragment>
-      <MultipleFacts setUrl={setUrl} />
-      {loading || fact === null ? (
+      <ProfilerComponent id='multiple'>
+        <MultipleFacts setUrl={setUrl} />
+      </ProfilerComponent>
+      {/* {loading || fact === null ? (
         <Dice />
       ) : Error ? (
         <div>{Error && "Server Timeout"}</div>
       ) : (
         <FactsList Facts={JsonFacts} />
-      )}
+      )} */}
     </Fragment>
   );
 };

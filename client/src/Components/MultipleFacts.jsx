@@ -2,13 +2,23 @@ import Board from "./Board";
 import Header from "./Header";
 import Down from "../assets/dropdown.png";
 import InputNumber from "./InputNumber";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import Style from "./Styles/Fact.module.css";
 
 const MultipleFacts = ({ setUrl }) => {
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(5);
+
+  const memoInput1 = useMemo(
+    () => <InputNumber SetNumber={setStart} />,
+    [setStart]
+  );
+
+  const memoInput2 = useMemo(
+    () => <InputNumber SetNumber={setEnd} />,
+    [setEnd]
+  );
 
   const checkValue = (beg, to) => {
     if (beg - to > 99) return false;
@@ -35,13 +45,9 @@ const MultipleFacts = ({ setUrl }) => {
           <p>Between Difference of 100</p>
         </div>
         <h4>Start</h4>
-        <div className={Style.Flex}>
-          <InputNumber SetNumber={setStart} />
-        </div>
+        <div className={Style.Flex}>{memoInput1}</div>
         <h4>End</h4>
-        <div className={Style.Flex}>
-          <InputNumber SetNumber={setEnd} />
-        </div>
+        <div className={Style.Flex}>{memoInput2}</div>
       </div>
 
       <div style={{ display: "flex" }}>
