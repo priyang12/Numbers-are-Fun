@@ -20,13 +20,13 @@ const Multiple = () => {
       <ProfilerComponent id='multiple'>
         <MultipleFacts setUrl={setUrl} />
       </ProfilerComponent>
-      {/* {loading || fact === null ? (
+      {loading || fact === null ? (
         <Dice />
       ) : Error ? (
         <div>{Error && "Server Timeout"}</div>
       ) : (
         <FactsList Facts={JsonFacts} />
-      )} */}
+      )}
     </Fragment>
   );
 };

@@ -9,7 +9,7 @@ const FactsList = ({ Facts }) => {
       setArrayFacts((pre) => pre.concat(Facts[i]));
     }
   }, [Facts]);
-  if (!Facts) return;
+  if (!Facts) return null;
   return (
     <div className='mt-5'>
       <Board type='secondary'>
