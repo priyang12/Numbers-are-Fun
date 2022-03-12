@@ -10,33 +10,29 @@ export const useCounter = (initialState) => {
 };
 
 export const useFetch = (url) => {
-  const [loading, setLoading] = useState(false);
-  const [fact, setFact] = useState(null);
-  const [Error, setError] = useState(null);
-  const start = useRef(true);
+  const [Call, setCall] = useState({
+    FetchedData: null,
+    error: null,
+    loading: false,
+  });
   useEffect(() => {
     let fetchData = async () => {
-      console.log("API CALL");
+      setCall({ loading: true });
       try {
-        setLoading(true);
         const { data } = await axios.get("/api" + url);
-        setFact(data);
-        setError(null);
+        setCall({ FetchedData: data, loading: false, error: null });
       } catch (error) {
         const err = error.response?.data || "SERVER ERROR";
-        setError(err);
-        setFact(null);
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        setCall({ FetchedData: null, error: err, loading: false });
       }
     };
     fetchData();
-    return () => {
-      start.current = null;
-    };
+    return () => {};
   }, [url]);
 
-  return { loading, fact, Error };
+  return {
+    loading: Call.loading,
+    fact: Call.FetchedData,
+    Error: Call.error,
+  };
 };
