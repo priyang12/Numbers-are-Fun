@@ -1,6 +1,7 @@
 import SingleFact from "../Components/SingleFact";
 import Board from "../Components/Board";
 import TitleName from "../Components/TitleName";
+import ProfilerComponent from "../Components/ProfilerComponent";
 import { Fragment } from "react";
 
 const Single = () => {
@@ -8,7 +9,9 @@ const Single = () => {
     <Fragment>
       <Board>
         <TitleName title='Single Numbers' />
-        <SingleFact type='math' />
+        <ProfilerComponent id='Single'>
+          <SingleFact type='math' />
+        </ProfilerComponent>
         <SingleFact type='trivia' />
         <SingleFact type='year' />
       </Board>

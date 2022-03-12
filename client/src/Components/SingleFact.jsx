@@ -9,10 +9,14 @@ const GetFact = ({ type }) => {
 
   const [Number, SetNumber] = useState(0);
 
+  // Review Needed
+  // const memoInput = useMemo(() => <InputNumber SetNumber={SetNumber} />, []);
+
   const { loading, Error, fact } = useFetch(url);
 
   const FindFact = (e) => {
     e.preventDefault();
+
     //check if not same number
     if (url !== `?ApiCall=${Number}/${type}`) {
       setUrl(`?ApiCall=${Number}/${type}`);
