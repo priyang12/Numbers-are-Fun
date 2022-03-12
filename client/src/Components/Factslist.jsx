@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Board from "./Board";
 import Style from "./Styles/List.module.css";
+import TitleName from "./TitleName";
 
 const FactsList = ({ Facts }) => {
   const [ArrayFacts, setArrayFacts] = useState([]);
@@ -9,7 +10,16 @@ const FactsList = ({ Facts }) => {
       setArrayFacts((pre) => pre.concat(Facts[i]));
     }
   }, [Facts]);
-  if (!Facts) return null;
+
+  if (!Facts)
+    return (
+      <div className='mt-5'>
+        <Board type='secondary'>
+          <TitleName title='Empty List' />
+        </Board>
+      </div>
+    );
+
   return (
     <div className='mt-5'>
       <Board type='secondary'>
