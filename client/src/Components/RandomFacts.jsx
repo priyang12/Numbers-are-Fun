@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFetch } from "../utils/Hooks";
 import PropTypes from "prop-types";
-import Dice from "../utils/DiceRoll";
+import Dice from "./DiceRoll";
 
 import Style from "./Styles/Fact.module.css";
 

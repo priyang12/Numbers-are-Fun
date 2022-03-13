@@ -3,7 +3,7 @@ import { useFetch } from "../utils/Hooks";
 import MultipleFacts from "../Components/MultipleFacts";
 import FactsList from "../Components/FactsList";
 import ProfilerComponent from "../Components/ProfilerComponent";
-import Dice from "../utils/DiceRoll";
+import Dice from "../Components/DiceRoll";
 
 const Multiple = () => {
   const [JsonFacts, setJsonFacts] = useState(null);
