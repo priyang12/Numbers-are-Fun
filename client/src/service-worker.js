@@ -52,12 +52,3 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
-
-// Catch routing errors, like if the user is offline
-setCatchHandler(async ({ event }) => {
-  if (event.request.destination === "document") {
-    return matchPrecache("/offline.html");
-  }
-
-  return Response.error();
-});
