@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import { useFetch } from "../utils/Hooks";
 import MultipleFacts from "../Components/MultipleFacts";
-import FactsList from "../Components/FactsList";
+import FactsList from "../Components/Factslist";
 import ProfilerComponent from "../Components/ProfilerComponent";
 import Dice from "../Components/DiceRoll";
 

@@ -2,14 +2,9 @@
 
 import { clientsClaim } from "workbox-core";
 import { ExpirationPlugin } from "workbox-expiration";
-import {
-  precacheAndRoute,
-  createHandlerBoundToURL,
-  matchPrecache,
-} from "workbox-precaching";
+import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
 import { StaleWhileRevalidate } from "workbox-strategies";
-import { setCatchHandler } from "workbox-routing";
 
 clientsClaim();
 
@@ -36,11 +31,12 @@ registerRoute(({ request, url }) => {
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) =>
-    url.origin === self.location.origin && url.pathname.endsWith(".png"), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+    (url.origin === self.location.origin && url.pathname.endsWith(".png")) ||
+    url.pathname.endsWith(".webp") ||
+    url.pathname.endsWith(".svg"),
   new StaleWhileRevalidate({
     cacheName: "images",
     plugins: [
-      // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],

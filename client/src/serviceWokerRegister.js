@@ -9,7 +9,7 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
-  if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+  if (process.env.NODE_ENV !== "production" && "serviceWorker" in navigator) {
     // The URL constructor is available in all browsers that support SW.
     console.log("Inside register");
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
