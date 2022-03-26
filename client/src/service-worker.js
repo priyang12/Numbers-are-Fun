@@ -38,7 +38,11 @@ registerRoute(
     cacheName: "images",
     plugins: [
       // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 50 }),
+      new ExpirationPlugin({
+        maxEntries: 50,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+        purgeOnQuotaError: true,
+      }),
     ],
   })
 );
