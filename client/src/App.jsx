@@ -26,17 +26,17 @@ function App() {
     twitter: "https://twitter.com/Priyang_Bawa",
   };
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
-        <Header Title='Tales of Numbers' />
-        <AlertBox alertMessage='No Internet Connection' display={!Online} />
+        <Header Title="Tales of Numbers" />
+        <AlertBox alertMessage="No Internet Connection" display={!Online} />
         <Navigator />
         <Switch>
-          <Route exact path='/' component={Single} />
-          <Route exact path='/Random' component={Random} />
-          <Route exact path='/Multiple' component={Multiple} />
-          <Route exact path='/Math' component={Mathematicians} />
-          <Route path='*' component={NotFound} />
+          <Route exact path="/" component={Single} />
+          <Route exact path="/Random" component={Random} />
+          <Route exact path="/Multiple" component={Multiple} />
+          <Route exact path="/Math" component={Mathematicians} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <Footer links={SocialLinks} />
       </Router>

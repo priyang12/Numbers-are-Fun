@@ -9,7 +9,7 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
-  if (process.env.NODE_ENV !== "production" && "serviceWorker" in navigator) {
+  if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     // The URL constructor is available in all browsers that support SW.
     console.log("Inside register");
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
@@ -26,6 +26,7 @@ export function register(config) {
 
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
+
         navigator.serviceWorker.ready.then(() => {
           console.log(
             "This web app is being served cache-first by a service " +
@@ -44,7 +45,11 @@ function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
-      registration.onupdatefound = () => {
+      // setInterval(() => {
+      //   registration.update()
+      // }, 15 * 60 * 1000)
+
+      registration.onupdatefound = async () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
@@ -52,14 +57,10 @@ function registerValidSW(swUrl, config) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === "installed") {
             if (navigator.serviceWorker.controller) {
-              // At this point, the updated precached content has been fetched,
-              // but the previous service worker will still serve the older
-              // content until all client tabs are closed.
               console.log(
                 "New content is available and will be used when all " +
                   "tabs for this page are closed. See https://cra.link/PWA."
               );
-
               // Execute callback
               if (config && config.onUpdate) {
                 config.onUpdate(registration);
