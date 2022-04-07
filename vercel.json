@@ -3,7 +3,7 @@
     {
       "src": "package.json",
       "use": "@vercel/node",
-      "config": { "distDir": "client/public" }
+      "config": { "distDir": "client/build" }
     },
     {
       "src": "backend/index.js",
