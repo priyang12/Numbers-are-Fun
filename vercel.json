@@ -3,7 +3,7 @@
     {
       "src": "package.json",
       "use": "@vercel/node",
-      "config": { "distDir": "backend" }
+      "config": { "distDir": "backend/index" }
     }
   ],
   "routes": [
