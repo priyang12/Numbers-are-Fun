@@ -2,13 +2,14 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": { "distDir": "backend/index.js" }
     }
   ],
-  "routes": [
+  "redirects": [
     {
-      "src": "/.*",
-      "dest": "backend/index.js"
+      "source": "/(.*)",
+      "destination": "backend/index.js"
     }
   ]
 }
