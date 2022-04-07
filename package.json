@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "main": "proxy-server.js",
   "scripts": {
-    "start": "node proxy-server.js",
-    "server": "nodemon proxy-server.js",
-    "client": "npm start --prefix client",
-    "InstallCommand": "npm install && npm install --prefix client",
+    "start": "node backend",
+    "server": "nodemon backend",
+    "install": "cd client npm install client cd .. && npm install",
     "build": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },

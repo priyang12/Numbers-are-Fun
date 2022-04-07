@@ -25,7 +25,6 @@ app.get("/api", (req, res) => {
 //static for Browser
 const _dirname = path.resolve();
 
-app.use("/Photos", express.static(path.join(__dirname, "/Photos")));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "/client/build")));
