@@ -3,13 +3,13 @@
     {
       "src": "package.json",
       "use": "@vercel/node",
-      "config": { "distDir": "client/public" }
+      "config": { "distDir": "backend/index.js" }
     }
   ],
-  "redirects": [
+  "routes": [
     {
-      "source": "/.*",
-      "destination": "backend/index.js"
+      "src": "/.*",
+      "dest": "backend/index.js"
     }
   ]
 }
