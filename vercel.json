@@ -1,8 +1,12 @@
 {
-  "routes": [
+  "version": 2,
+  "name": "name-of-your-vercel-app",
+  "builds": [
+    { "src": "backend/index.js", "use": "@vercel/node" },
     {
-      "src": "/.*",
-      "dest": "backend/index.js"
+      "src": "./package.json",
+      "use": "@vercel/node"
     }
-  ]
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
 }
