@@ -5,7 +5,6 @@
   "scripts": {
     "start": "node backend",
     "server": "nodemon backend",
-    "install": "cd client npm install client cd .. && npm install",
     "build": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
