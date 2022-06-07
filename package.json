@@ -5,10 +5,9 @@
   "scripts": {
     "start": "node proxy-server.js",
     "server": "nodemon proxy-server.js",
-    "client": "npm start --prefix client",
-    "clientProd": "npm start Production --prefix client",
+    "install": "cd client && npm install",
+    "build": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install --prefix client && npm build --prefix client",
     "prodDev": "concurrently \"npm run server\" \"npm run clientProd\""
   },
   "keywords": [],
