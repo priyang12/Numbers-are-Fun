@@ -1,12 +1,12 @@
 {
   "name": "numbers-are-fun",
   "version": "1.0.0",
-  "main": "proxy-server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node backend",
     "server": "nodemon backend",
     "install": "cd client npm install client cd .. && npm install",
-    "build": "cd client && npm run build && cd ..",
+    "build": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
