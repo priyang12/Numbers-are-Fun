@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { useFetch } from "../utils/Hooks";
-import InputNumber from "./InputNumber";
-import Style from "./Styles/Fact.module.css";
-import PropTypes from "prop-types";
+import { useFetch } from "../../Hooks/useFetch";
+import InputNumber from "../../Components/InputNumber";
+import Style from "../../Styles/Fact.module.css";
 
-const GetFact = ({ type }) => {
+type props = {
+  type: "math" | "trivia" | "year";
+};
+
+const GetFact = ({ type }: props) => {
   const [url, setUrl] = useState(`?ApiCall=0/${type}`);
-
   const [Number, SetNumber] = useState(0);
 
   // Review Needed
@@ -14,10 +16,8 @@ const GetFact = ({ type }) => {
 
   const { loading, Error, fact } = useFetch(url);
 
-  const FindFact = (e) => {
+  const FindFact: React.ComponentProps<"form">["onSubmit"] = (e) => {
     e.preventDefault();
-
-    //check if not same number
     if (url !== `?ApiCall=${Number}/${type}`) {
       setUrl(`?ApiCall=${Number}/${type}`);
     }
@@ -27,30 +27,27 @@ const GetFact = ({ type }) => {
     <form className={Style.single}>
       <div className={Style.Fact}>
         {loading ? (
-          <div className='Loading' data-testid='loader'>
+          <div className="Loading" data-testid="loader">
             Wait For IT.....
           </div>
         ) : Error ? (
-          <div className='Error'>'Server Timeout'</div>
+          <div className="Error">'Server Timeout'</div>
         ) : (
           <div>{fact}</div>
         )}
       </div>
-      <div className={Style.SelectNumber}>
+      <form className={Style.SelectNumber} onSubmit={FindFact}>
         <InputNumber SetNumber={SetNumber} />
         <label htmlFor={type} className={Style.Type}>
           /{type}
         </label>
-        <div type='submit' className='pointer' onClick={FindFact}>
+        <button type="submit" className="pointer">
           Find
-        </div>
-      </div>
+        </button>
+      </form>
       <div className={Style.line}></div>
     </form>
   );
 };
 
-GetFact.propTypes = {
-  type: PropTypes.string.isRequired,
-};
 export default GetFact;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Board from "./Board";
-import Style from "./Styles/List.module.css";
-import TitleName from "./TitleName";
+import Board from "../../Components/Board";
+import Style from "./List.module.css";
+import TitleName from "../../Components/TitleName";
 
-const FactsList = ({ Facts }) => {
+const FactsList = ({ Facts }: { Facts: any[] }) => {
   const [ArrayFacts, setArrayFacts] = useState([]);
   useEffect(() => {
     for (const i in Facts) {
@@ -13,17 +13,17 @@ const FactsList = ({ Facts }) => {
 
   if (!Facts)
     return (
-      <div className='mt-5'>
-        <Board type='secondary'>
-          <TitleName title='Empty List' />
+      <div className="mt-5">
+        <Board type="secondary">
+          <TitleName title="Empty List" />
         </Board>
       </div>
     );
 
   return (
-    <div className='mt-5'>
-      <Board type='secondary'>
-        <ul className={Style.list} data-testid='ListItems'>
+    <div className="mt-5">
+      <Board type="secondary">
+        <ul className={Style.list} data-testid="ListItems">
           {ArrayFacts.length > 0 &&
             ArrayFacts.map((item, index) => (
               <li className={Style.listItem} key={index}>

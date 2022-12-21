@@ -1,12 +1,15 @@
-import Board from "./Board";
-import Header from "./Header";
-import Down from "../assets/dropdown.png";
-import InputNumber from "./InputNumber";
+import Board from "../../Components/Board";
+import Header from "../../Components/Header";
+import Down from "../../assets/dropdown.png";
+import InputNumber from "../../Components/InputNumber";
 import { useMemo, useState } from "react";
+import Style from "../../Styles/Fact.module.css";
 
-import Style from "./Styles/Fact.module.css";
-
-const MultipleFacts = ({ setUrl }) => {
+const MultipleFacts = ({
+  setUrl,
+}: {
+  setUrl: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(5);
 
@@ -20,7 +23,7 @@ const MultipleFacts = ({ setUrl }) => {
     [setEnd]
   );
 
-  const checkValue = (beg, to) => {
+  const checkValue = (beg: number, to: number) => {
     if (beg - to > 99) return false;
     return true;
   };
@@ -38,7 +41,7 @@ const MultipleFacts = ({ setUrl }) => {
   };
   return (
     <Board>
-      <Header Title='Multiple Numbers' />
+      <Header Title="Multiple Numbers" />
       <h1 className={Style.Title}>Select Range</h1>
       <div className={Style.Range}>
         <div className={Style.SubTitle}>
@@ -52,18 +55,18 @@ const MultipleFacts = ({ setUrl }) => {
 
       <div style={{ display: "flex" }}>
         <div className={Style.ButtonFlex}>
-          <button id='math' className={Style.TypeBtn} onClick={mathSelect}>
+          <button id="math" className={Style.TypeBtn} onClick={mathSelect}>
             Math
           </button>
-          <button id='trivia' className={Style.TypeBtn} onClick={triviaSelect}>
+          <button id="trivia" className={Style.TypeBtn} onClick={triviaSelect}>
             Trivia
           </button>
-          <button id='year' className={Style.TypeBtn} onClick={yearSelect}>
+          <button id="year" className={Style.TypeBtn} onClick={yearSelect}>
             Year
           </button>
         </div>
         <div className={Style.Logo}>
-          <img src={Down} alt='Look Down' />
+          <img src={Down} alt="Look Down" />
         </div>
       </div>
     </Board>

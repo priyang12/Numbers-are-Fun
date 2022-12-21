@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import TitleName from "../Components/TitleName";
-import Board from "../Components/Board";
-import RandomFacts from "../Components/RandomFacts";
+import TitleName from "../../Components/TitleName";
+import Board from "../../Components/Board";
+import RandomFacts from "./RandomFacts";
 
 const Random = () => {
   return (

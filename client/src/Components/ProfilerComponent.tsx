@@ -1,5 +1,4 @@
-import { Profiler } from "react";
-import PropTypes from "prop-types";
+import React, { Profiler, ProfilerOnRenderCallback } from "react";
 
 function ProfilerCallback(
   id,
@@ -13,16 +12,15 @@ function ProfilerCallback(
   console.log(phase);
 }
 
-const ProfilerComponent = ({ children, id }) => {
+const ProfilerComponent = ({
+  children,
+  id,
+}: { id: string } & React.ComponentPropsWithoutRef<"div">) => {
   return (
     <Profiler id={id} onRender={ProfilerCallback}>
       {children}
     </Profiler>
   );
-};
-
-ProfilerComponent.propTypes = {
-  id: PropTypes.string.isRequired,
 };
 
 export default ProfilerComponent;

@@ -10,7 +10,7 @@ const style = {
 const Dice = () => {
   return (
     <div style={style}>
-      <img src={DiceGif} alt='Loading' />
+      <img src={DiceGif} alt="Loading" />
     </div>
   );
 };

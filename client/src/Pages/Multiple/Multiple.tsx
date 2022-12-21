@@ -1,9 +1,9 @@
 import { Fragment, useState, useEffect } from "react";
-import { useFetch } from "../utils/Hooks";
-import MultipleFacts from "../Components/MultipleFacts";
-import FactsList from "../Components/Factslist";
-import ProfilerComponent from "../Components/ProfilerComponent";
-import Dice from "../Components/DiceRoll";
+import { useFetch } from "../../Hooks/useFetch";
+import MultipleFacts from "./MultipleFacts";
+import FactsList from "./Factslist";
+import ProfilerComponent from "../../Components/ProfilerComponent";
+import Dice from "../../Components/DiceRoll";
 
 const Multiple = () => {
   const [JsonFacts, setJsonFacts] = useState(null);
@@ -17,7 +17,7 @@ const Multiple = () => {
 
   return (
     <Fragment>
-      <ProfilerComponent id='multiple'>
+      <ProfilerComponent id="multiple">
         <MultipleFacts setUrl={setUrl} />
       </ProfilerComponent>
       {loading || fact === null ? (
@@ -25,7 +25,7 @@ const Multiple = () => {
       ) : Error ? (
         <div>{Error && "Server Timeout"}</div>
       ) : (
-        <FactsList Facts={JsonFacts} />
+        <FactsList Facts={JsonFacts as any} />
       )}
     </Fragment>
   );

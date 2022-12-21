@@ -1,21 +1,25 @@
 import { useState } from "react";
-import { useFetch } from "../utils/Hooks";
-import PropTypes from "prop-types";
-import Dice from "./DiceRoll";
+import { useFetch } from "../../Hooks/useFetch";
+import Dice from "../../Components/DiceRoll";
+import Style from "../../Styles/Fact.module.css";
 
-import Style from "./Styles/Fact.module.css";
+type props = {
+  type: "math" | "trivia" | "year";
+};
 
-const RandomFacts = ({ type }) => {
+const RandomFacts = ({ type }: props) => {
   const [url, setUrl] = useState(`?ApiCall=random/${type}`);
   const { loading, Error, fact } = useFetch(url);
-  const onsubmit = (e) => {
+
+  const onsubmit: React.ComponentProps<"form">["onSubmit"] = (e) => {
     e.preventDefault();
     setUrl(`?ApiCall=${Math.floor(Math.random() * 100)}/${type}`);
   };
+
   return (
     <div className={Style.Random}>
       <form onSubmit={onsubmit}>
-        <input type='submit' value='Random' className={Style.RandomBtn} />
+        <input type="submit" value="Random" className={Style.RandomBtn} />
         <label htmlFor={type}>/{type}</label>
       </form>
       <article className={Style.Fact}>
@@ -25,7 +29,4 @@ const RandomFacts = ({ type }) => {
   );
 };
 
-RandomFacts.propTypes = {
-  type: PropTypes.string.isRequired,
-};
 export default RandomFacts;

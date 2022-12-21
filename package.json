@@ -4,11 +4,11 @@
   "main": "proxy-server.js",
   "scripts": {
     "start": "node proxy-server.js",
+    "client": "npm run start --prefix client",
     "server": "nodemon proxy-server.js",
     "install": "cd client && npm install",
     "build": "npm run build --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "prodDev": "concurrently \"npm run server\" \"npm run clientProd\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "Priyang",

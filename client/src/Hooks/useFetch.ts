@@ -1,27 +1,20 @@
-import { useState, useCallback, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
-export const useCounter = (initialState) => {
-  const [count, setCount] = useState(initialState);
-  const increment = useCallback(() => setCount((x) => x + 1), []);
-  const decrement = useCallback(() => setCount((x) => x - 1), []);
-
-  return { count, setCount, increment, decrement };
-};
-
-export const useFetch = (url) => {
+export const useFetch = (url: string) => {
   const [Call, setCall] = useState({
     FetchedData: null,
     error: null,
     loading: false,
   });
+
   useEffect(() => {
     let fetchData = async () => {
-      setCall({ loading: true });
+      setCall({ ...Call, loading: true });
       try {
         const { data } = await axios.get("/api" + url);
         setCall({ FetchedData: data, loading: false, error: null });
-      } catch (error) {
+      } catch (error: any) {
         const err = error.response?.data || "SERVER ERROR";
         setCall({ FetchedData: null, error: err, loading: false });
       }
