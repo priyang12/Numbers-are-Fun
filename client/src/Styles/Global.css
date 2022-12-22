@@ -10,6 +10,7 @@ body {
   font-family: pastelRegular, Arial, Helvetica, sans-serif;
   background-color: #e6c290;
   background: url("../assets/horixonalpencil.webp") no-repeat center/cover;
+  min-height: 100vh;
 }
 
 code {
