@@ -1,14 +1,26 @@
 import { Fragment, useState, useEffect } from "react";
-import { useFetch } from "../../Hooks/useFetch";
 import MultipleFacts from "./MultipleFacts";
 import FactsList from "./Factslist";
 import ProfilerComponent from "../../Components/ProfilerComponent";
 import Dice from "../../Components/DiceRoll";
+import { useMultipleFacts } from "../../Hooks/useMultipleFacts";
+
+export type MultipleParma = {
+  start: number;
+  end: number;
+  type: "math" | "trivia" | "year";
+};
 
 const Multiple = () => {
   const [JsonFacts, setJsonFacts] = useState(null);
-  const [url, setUrl] = useState(`?ApiCall=0..5/math`);
-  const { loading, Error, fact } = useFetch(url);
+  const [{ end, start, type }, setFindRanges] = useState<MultipleParma>({
+    start: 0,
+    end: 5,
+    type: "math",
+  });
+
+  const { data: fact, isLoading, isError } = useMultipleFacts(start, end, type);
+
   useEffect(() => {
     if (fact) {
       setJsonFacts(JSON.parse(fact));
@@ -18,12 +30,12 @@ const Multiple = () => {
   return (
     <Fragment>
       <ProfilerComponent id="multiple">
-        <MultipleFacts setUrl={setUrl} />
+        <MultipleFacts setFindRanges={setFindRanges} />
       </ProfilerComponent>
-      {loading || fact === null ? (
+      {isLoading || fact === null ? (
         <Dice />
-      ) : Error ? (
-        <div>{Error && "Server Timeout"}</div>
+      ) : isError ? (
+        <div>{isError && "Server Timeout"}</div>
       ) : (
         <FactsList Facts={JsonFacts as any} />
       )}

@@ -1,6 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { QueryClientProvider } from "react-query";
 import App from "./App";
+import { queryClient } from "./Query";
 // import * as serviceWorkerRegistration from "./serviceWokerRegister";
 
 import "./Styles/Global.css";
@@ -10,7 +12,9 @@ const root = createRoot(container!);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

@@ -20,8 +20,7 @@ code {
   font-family: "pastelRegular";
   font-style: normal;
   font-weight: normal;
-  src: local("pastelRegular"),
-    url("../fonts/pastel\ crayon.woff") format("woff");
+  src: local("pastelRegular"), url("../fonts/pastelCrayon.woff") format("woff");
   font-display: swap;
 }
 header {

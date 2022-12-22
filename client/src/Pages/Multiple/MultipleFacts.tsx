@@ -3,12 +3,13 @@ import Header from "../../Components/Header";
 import Down from "../../assets/dropdown.png";
 import InputNumber from "../../Components/InputNumber";
 import { useMemo, useState } from "react";
+import { MultipleParma } from "./Multiple";
 import Style from "../../Styles/Fact.module.css";
 
 const MultipleFacts = ({
-  setUrl,
+  setFindRanges,
 }: {
-  setUrl: React.Dispatch<React.SetStateAction<string>>;
+  setFindRanges: React.Dispatch<React.SetStateAction<MultipleParma>>;
 }) => {
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(5);
@@ -29,15 +30,27 @@ const MultipleFacts = ({
   };
   const mathSelect = () => {
     checkValue(start, end);
-    setUrl(`?ApiCall=${start}..${end}/math`);
+    setFindRanges({
+      start,
+      end,
+      type: "math",
+    });
   };
   const triviaSelect = () => {
     checkValue(start, end);
-    setUrl(`?ApiCall=${start}..${end}/trivia`);
+    setFindRanges({
+      start,
+      end,
+      type: "trivia",
+    });
   };
   const yearSelect = () => {
     checkValue(start, end);
-    setUrl(`?ApiCall=${start}..${end}/year`);
+    setFindRanges({
+      start,
+      end,
+      type: "year",
+    });
   };
   return (
     <Board>

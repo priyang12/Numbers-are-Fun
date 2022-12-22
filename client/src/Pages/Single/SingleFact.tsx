@@ -1,36 +1,35 @@
 import { useState } from "react";
-import { useFetch } from "../../Hooks/useFetch";
 import InputNumber from "../../Components/InputNumber";
 import Style from "../../Styles/Fact.module.css";
+import { useSingleFact } from "../../Hooks/useSingleFact";
 
 type props = {
   type: "math" | "trivia" | "year";
 };
 
 const GetFact = ({ type }: props) => {
-  const [url, setUrl] = useState(`?ApiCall=0/${type}`);
   const [Number, SetNumber] = useState(0);
-
+  const [FindNumber, setFindNumber] = useState(0);
   // Review Needed
   // const memoInput = useMemo(() => <InputNumber SetNumber={SetNumber} />, []);
 
-  const { loading, Error, fact } = useFetch(url);
+  const { isLoading, isError, data: fact } = useSingleFact(FindNumber, type);
 
   const FindFact: React.ComponentProps<"form">["onSubmit"] = (e) => {
     e.preventDefault();
-    if (url !== `?ApiCall=${Number}/${type}`) {
-      setUrl(`?ApiCall=${Number}/${type}`);
+    if (Number !== FindNumber) {
+      setFindNumber(Number);
     }
   };
 
   return (
-    <form className={Style.single}>
+    <div className={Style.single}>
       <div className={Style.Fact}>
-        {loading ? (
+        {isLoading ? (
           <div className="Loading" data-testid="loader">
             Wait For IT.....
           </div>
-        ) : Error ? (
+        ) : isError ? (
           <div className="Error">'Server Timeout'</div>
         ) : (
           <div>{fact}</div>
@@ -46,7 +45,7 @@ const GetFact = ({ type }: props) => {
         </button>
       </form>
       <div className={Style.line}></div>
-    </form>
+    </div>
   );
 };
 
