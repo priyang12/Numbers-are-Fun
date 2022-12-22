@@ -4,6 +4,7 @@ import FactsList from "./Factslist";
 import ProfilerComponent from "../../Components/ProfilerComponent";
 import Dice from "../../Components/DiceRoll";
 import { useMultipleFacts } from "../../Hooks/useMultipleFacts";
+import AnimateWrapper from "../../Components/AnimateWrapper";
 
 export type MultipleParma = {
   start: number;
@@ -28,7 +29,7 @@ const Multiple = () => {
   }, [fact]);
 
   return (
-    <Fragment>
+    <AnimateWrapper>
       <ProfilerComponent id="multiple">
         <MultipleFacts setFindRanges={setFindRanges} />
       </ProfilerComponent>
@@ -39,7 +40,7 @@ const Multiple = () => {
       ) : (
         <FactsList Facts={JsonFacts as any} />
       )}
-    </Fragment>
+    </AnimateWrapper>
   );
 };
 

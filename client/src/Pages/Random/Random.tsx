@@ -2,10 +2,11 @@ import { Fragment } from "react";
 import TitleName from "../../Components/TitleName";
 import Board from "../../Components/Board";
 import RandomFacts from "./RandomFacts";
+import AnimateWrapper from "../../Components/AnimateWrapper";
 
 const Random = () => {
   return (
-    <Fragment>
+    <AnimateWrapper>
       <Board>
         <TitleName title="Random Numbers" />
         <RandomFacts type="math" />
@@ -18,7 +19,7 @@ const Random = () => {
       <Board>
         <RandomFacts type="year" />
       </Board>
-    </Fragment>
+    </AnimateWrapper>
   );
 };
 

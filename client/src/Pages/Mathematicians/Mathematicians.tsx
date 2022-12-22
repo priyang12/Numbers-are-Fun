@@ -3,11 +3,12 @@ import TitleName from "../../Components/TitleName";
 import Mathematician from "./Mathematician";
 import ramaImg from "../../assets/Ramanujan.jpeg";
 import MathematicianData from "../../Data/Math.json";
+import AnimateWrapper from "../../Components/AnimateWrapper";
 
 const Mathematicians = () => {
   const { Title, Description, blockquote } = MathematicianData;
   return (
-    <div className=" d-flex flex-column flex-md-row justify-content-centers container">
+    <AnimateWrapper>
       <div className="order-2">
         <Bored type="secondary">
           <img src={ramaImg} alt="rama" />
@@ -23,7 +24,7 @@ const Mathematicians = () => {
           />
         </Bored>
       </div>
-    </div>
+    </AnimateWrapper>
   );
 };
 

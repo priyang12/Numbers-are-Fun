@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Profiler, ProfilerOnRenderCallback } from "react";
 
 function ProfilerCallback(

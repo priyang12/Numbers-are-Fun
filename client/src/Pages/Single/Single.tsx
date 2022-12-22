@@ -1,18 +1,18 @@
 import SingleFact from "./SingleFact";
 import Board from "../../Components/Board";
 import TitleName from "../../Components/TitleName";
-import { Fragment } from "react";
+import AnimateWrapper from "../../Components/AnimateWrapper";
 
 const Single = () => {
   return (
-    <Fragment>
+    <AnimateWrapper>
       <Board>
         <TitleName title="Single Numbers" />
         <SingleFact type="math" />
         <SingleFact type="trivia" />
         <SingleFact type="year" />
       </Board>
-    </Fragment>
+    </AnimateWrapper>
   );
 };
 
