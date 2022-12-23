@@ -1,12 +1,14 @@
 /* eslint-disable no-restricted-globals */
-
+import { warmStrategyCache } from "workbox-recipes";
 import { clientsClaim } from "workbox-core";
 import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
-import { StaleWhileRevalidate } from "workbox-strategies";
+import { StaleWhileRevalidate, CacheFirst } from "workbox-strategies";
 
 clientsClaim();
+
+declare const self: ServiceWorkerGlobalScope;
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -30,6 +32,13 @@ registerRoute(({ request, url }) => {
 
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
+  ({ request }) => request.destination === "script",
+  new CacheFirst({
+    cacheName: "scripts",
+  })
+);
+
+registerRoute(
   ({ url }) =>
     (url.origin === self.location.origin && url.pathname.endsWith(".png")) ||
     url.pathname.endsWith(".webp") ||
@@ -47,8 +56,21 @@ registerRoute(
   })
 );
 
-self.addEventListener("message", (event) => {
+registerRoute(
+  ({ url }) => url.origin === "https://fonts.googleapis.com",
+  new StaleWhileRevalidate({
+    cacheName: "google-fonts-stylesheets",
+  })
+);
+
+self.addEventListener("message", (event: any) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
 });
+
+// This can be any strategy, CacheFirst used as an example.
+const strategy = new CacheFirst();
+const urls = ["/offline.html"];
+
+warmStrategyCache({ urls, strategy });
