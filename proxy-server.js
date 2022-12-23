@@ -12,7 +12,6 @@ app.use(
 );
 
 app.get("/api", (req, res) => {
-  console.log(req.query.ApiCall);
   request(
     { url: `http://numbersapi.com/${req.query.ApiCall}` },
     (error, response, body) => {

@@ -56,10 +56,10 @@ const MultipleFacts = ({
     <Board>
       <Header Title="Multiple Numbers" />
       <h1 className={Style.Title}>Select Range</h1>
+      <div className={Style.SubTitle}>
+        <p>Between Difference of 100</p>
+      </div>
       <div className={Style.Range}>
-        <div className={Style.SubTitle}>
-          <p>Between Difference of 100</p>
-        </div>
         <h4>Start</h4>
         <div className={Style.Flex}>{memoInput1}</div>
         <h4>End</h4>

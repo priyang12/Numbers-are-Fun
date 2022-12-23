@@ -13,33 +13,40 @@ export type MultipleParma = {
 };
 
 const Multiple = () => {
-  const [JsonFacts, setJsonFacts] = useState(null);
+  const [ParsedFacts, setParsedFacts] = useState([]);
   const [{ end, start, type }, setFindRanges] = useState<MultipleParma>({
     start: 0,
     end: 5,
     type: "math",
   });
-
-  const { data: fact, isLoading, isError } = useMultipleFacts(start, end, type);
+  const {
+    data: facts,
+    isLoading,
+    isError,
+  } = useMultipleFacts(start, end, type);
 
   useEffect(() => {
-    if (fact) {
-      setJsonFacts(JSON.parse(fact));
+    const PraseFact = facts ? JSON.parse(facts) : [];
+    const Array = [] as any;
+    for (const i in PraseFact as string[]) {
+      Array.push(PraseFact[i]);
     }
-  }, [fact]);
+    setParsedFacts(Array);
+  }, [facts]);
 
   return (
     <AnimateWrapper>
       <ProfilerComponent id="multiple">
         <MultipleFacts setFindRanges={setFindRanges} />
       </ProfilerComponent>
-      {isLoading || fact === null ? (
+      {isLoading ? (
         <Dice />
       ) : isError ? (
         <div>{isError && "Server Timeout"}</div>
-      ) : (
-        <FactsList Facts={JsonFacts as any} />
-      )}
+      ) : null}
+      {ParsedFacts && ParsedFacts.length > 0 ? (
+        <FactsList Facts={ParsedFacts} />
+      ) : null}
     </AnimateWrapper>
   );
 };

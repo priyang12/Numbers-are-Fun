@@ -2,6 +2,17 @@
   margin: 0.5em;
   text-align: center;
   font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.FindButton {
+  background-color: #333;
+  color: #fff;
+  margin: auto;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 2rem;
 }
 .Random {
   font-size: 3rem;
@@ -11,8 +22,8 @@
   font-size: 3.5rem;
 }
 .Fact {
-  margin-top: 2rem;
   width: 90%;
+  margin: 2rem auto;
 }
 .RandomBtn {
   margin-top: 1rem;
@@ -31,10 +42,12 @@
 }
 .line {
   border-bottom: #fff dotted 10px;
+  margin: 1em;
 }
 .SubTitle p {
   font-weight: bold;
   padding: 1em;
+  text-align: center;
 }
 .Flex {
   display: flex;
@@ -57,6 +70,11 @@
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s all ease-in;
+
+  background-color: #333;
+
+  border: 2px solid #fff;
+  border-radius: 10px;
 }
 .TypeBtn:focus,
 .TypeBtn:hover,
@@ -77,7 +95,7 @@
 
 @media screen and (min-width: 768px) {
   .single {
-    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     font-size: 5rem;
@@ -86,7 +104,9 @@
     font-size: 5rem;
     padding: 1em 0.5em;
   }
-
+  .FindButton {
+    padding: 1em 2em;
+  }
   .SubTitle p {
     font-size: 3rem;
   }

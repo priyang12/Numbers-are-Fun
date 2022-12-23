@@ -10,8 +10,6 @@ type props = {
 const GetFact = ({ type }: props) => {
   const [Number, SetNumber] = useState(0);
   const [FindNumber, setFindNumber] = useState(0);
-  // Review Needed
-  // const memoInput = useMemo(() => <InputNumber SetNumber={SetNumber} />, []);
 
   const { isLoading, isError, data: fact } = useSingleFact(FindNumber, type);
 
@@ -37,12 +35,18 @@ const GetFact = ({ type }: props) => {
       </div>
       <form className={Style.SelectNumber} onSubmit={FindFact}>
         <InputNumber SetNumber={SetNumber} />
-        <label htmlFor={type} className={Style.Type}>
-          /{type}
-        </label>
-        <button type="submit" className="pointer">
-          Find
-        </button>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
+          <label htmlFor={type} className={Style.Type}>
+            /{type}
+          </label>
+          <button type="submit" className={Style.FindButton}>
+            Find
+          </button>
+        </div>
       </form>
       <div className={Style.line}></div>
     </div>

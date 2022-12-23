@@ -10,13 +10,14 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 1em;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.125);
 }
 .listItem:nth-child(odd) {
-  color: #f2f1ef;
-  background-color: #6e304b;
   margin: 0.5em 0;
 }
 .listItem:nth-child(even) {
   color: #e2ae6c;
-  background-color: #22161c;
 }

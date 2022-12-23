@@ -13,5 +13,5 @@ export const Variants = {
 export const Transition = {
   type: "spring",
   mass: 0.2,
-  duration: 1,
+  duration: 0.4,
 };

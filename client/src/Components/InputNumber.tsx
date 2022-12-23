@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import LeftArrowImg from "../assets/LeftArrow.png";
-import RightArrowImg from "../assets/RightArrow.png";
 import { useCounter } from "../Hooks/useCounter";
+import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
 // import ProfilerComponent from "./ProfilerComponent";
 import Style from "./Styles/NumberInput.module.css";
 
@@ -13,14 +12,10 @@ const InputNumber = ({ SetNumber }: { SetNumber: any }) => {
   }, [count, SetNumber]);
 
   return (
-    // <ProfilerComponent id='inputNumber'>
     <div className={Style.Container}>
-      <img
-        src={LeftArrowImg}
-        alt="left arrow"
-        onClick={decrement}
-        className={Style.Arrow}
-      />
+      <div className={Style.Arrow} onClick={decrement} data-testid="leftArrow">
+        <TfiAngleLeft />
+      </div>
       <input
         type="number"
         className={Style.InputNumber}
@@ -30,14 +25,10 @@ const InputNumber = ({ SetNumber }: { SetNumber: any }) => {
           setCount(parseInt(e.target.value));
         }}
       />
-      <img
-        src={RightArrowImg}
-        alt="right arrow"
-        onClick={increment}
-        className={Style.Arrow}
-      />
+      <div className={Style.Arrow} onClick={increment} data-testid="rightArrow">
+        <TfiAngleRight />
+      </div>
     </div>
-    // </ProfilerComponent>
   );
 };
 

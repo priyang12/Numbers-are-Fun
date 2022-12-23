@@ -17,7 +17,7 @@ const RandomFacts = ({ type }: props) => {
   return (
     <div className={Style.Random}>
       <form onSubmit={onsubmit}>
-        <input type="submit" value="Random" className={Style.RandomBtn} />
+        <input type="submit" value="Random" className={Style.FindButton} />
         <label htmlFor={type}>/{type}</label>
       </form>
       <article className={Style.Fact}>
