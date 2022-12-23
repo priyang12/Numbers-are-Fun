@@ -10,7 +10,7 @@ export const useMultipleFacts = (start: number, end: number, type: string) => {
     `Multiple/${start}/${end}/${type}`,
     async () => {
       const { data }: AxiosResponse<string> = await axios.get(
-        `http://localhost:5001/api?ApiCall=${start}..${end}/${type}`
+        `/api?ApiCall=${start}..${end}/${type}`
       );
       return data;
     }
