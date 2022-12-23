@@ -15,12 +15,12 @@ const MultipleFacts = ({
   const [end, setEnd] = useState(5);
 
   const memoInput1 = useMemo(
-    () => <InputNumber SetNumber={setStart} />,
+    () => <InputNumber SetNumber={setStart} val={start} />,
     [setStart]
   );
 
   const memoInput2 = useMemo(
-    () => <InputNumber SetNumber={setEnd} />,
+    () => <InputNumber SetNumber={setEnd} val={end} />,
     [setEnd]
   );
 

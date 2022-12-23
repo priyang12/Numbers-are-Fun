@@ -1,0 +1,39 @@
+{
+  "Maths": [
+    {
+      "image": "https://ik.imagekit.io/5aalo5l7bu7/Ramanujan_rDG_87chF.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1671763972848",
+      "Title": "Ramanujan favourite number 1729",
+      "blockquote": "I remember once going to see him when he was ill at Putney. I had ridden in taxi cab number 1729",
+      "Description": [
+        "1729, the Hardy-Ramanujan Number, is the smallest number which can be expressed as the sum of two different cubes in two different ways.",
+        "1729 is also the sum of the cubes of 12 and 1. Cube of 12 is 1728 and the cube of 1 is 1. Both the cubes, therefore, add up to 1729. "
+      ]
+    },
+    {
+      "image": "https://ik.imagekit.io/5aalo5l7bu7/Euclid_4k_68WfjD.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1671763973098",
+      "Title": "Euclid",
+      "blockquote": "The laws of nature are but the mathematical thoughts of God.",
+      "Description": [
+        "His work on the Euclidean algorithm, which is a method for finding the greatest common divisor of two numbers, is particularly significant.",
+        "A straight line is said to have been cut in extreme and mean ratio when, as the whole line is to the greater segment, so is the greater to the lesser."
+      ]
+    },
+    {
+      "image": "https://ik.imagekit.io/5aalo5l7bu7/PierredeFermat_2ql6DkK92.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1671764802277",
+      "Title": "Pierre de Fermat",
+      "blockquote": "I have discovered a truly marvelous proof of this, which however the margin is not large enough to contain.",
+      "Description": [
+        "Fermat is known for his work in number theory, including his famous last theorem which states that there are no positive integers a, b, and c such that a^n + b^n = c^n for any integer value of n greater than 2."
+      ]
+    },
+    {
+      "image": "https://ik.imagekit.io/5aalo5l7bu7/CarlFriedrichGauss_CMJroIJ2Q_.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1671763973823",
+      "Title": "Carl Friedrich Gauss",
+      "blockquote": "It is not knowledge, but the act of learning, not possession but the act of getting there, which grants the greatest enjoyment.",
+      "Description": [
+        "Gauss is known for his work in number theory, including his contributions to the theory of quadratic forms and his discovery of the prime number theorem.",
+        "Mathematics is the queen of sciences and number theory is the queen of mathematics. She often condescends to render service to astronomy and other natural sciences, but in all relations she is entitled to the first rank. one of his quote."
+      ]
+    }
+  ]
+}

@@ -24,6 +24,11 @@
 .Fact {
   width: 90%;
   margin: 2rem auto;
+  border-right: 2px solid #fff;
+}
+.SelectNumber {
+  padding: 1em;
+  user-select: none;
 }
 .RandomBtn {
   margin-top: 1rem;
@@ -43,6 +48,7 @@
 .line {
   border-bottom: #fff dotted 10px;
   margin: 1em;
+  display: none;
 }
 .SubTitle p {
   font-weight: bold;
@@ -87,6 +93,14 @@
   display: none;
 }
 
+@media screen and (max-width: 500px) {
+  .line {
+    display: block;
+  }
+  .Fact {
+    border-right: none;
+  }
+}
 @media screen and (min-width: 500px) {
   .Logo {
     display: block;

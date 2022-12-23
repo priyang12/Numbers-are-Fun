@@ -4,8 +4,14 @@ import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
 // import ProfilerComponent from "./ProfilerComponent";
 import Style from "./Styles/NumberInput.module.css";
 
-const InputNumber = ({ SetNumber }: { SetNumber: any }) => {
-  const { increment, decrement, count, setCount } = useCounter(0);
+const InputNumber = ({
+  val,
+  SetNumber,
+}: {
+  val: number;
+  SetNumber: React.Dispatch<React.SetStateAction<number>>;
+}) => {
+  const { increment, decrement, count, setCount } = useCounter(val);
 
   useEffect(() => {
     SetNumber(count);

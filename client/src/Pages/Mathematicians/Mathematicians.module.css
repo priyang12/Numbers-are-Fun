@@ -1,0 +1,40 @@
+.BoredWidth {
+  max-width: 90vw;
+  margin: 5em auto;
+}
+.Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5em;
+}
+.BoredContainer {
+  display: flex;
+  width: 90vw;
+  color: #fff;
+}
+.MathContent {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.List {
+  font-size: 1.5rem;
+  padding: 1em;
+}
+@media screen and (max-width: 500px) {
+  .Image {
+    margin-left: 0em;
+    display: block;
+  }
+}
+@media screen and (max-width: 800px) {
+  .BoredContainer {
+    flex-direction: column;
+  }
+  .List {
+    font-size: 1rem;
+    padding: 0em;
+  }
+}

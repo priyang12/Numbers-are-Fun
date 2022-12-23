@@ -33,6 +33,7 @@ const GetFact = ({ type }: props) => {
           <div>{fact}</div>
         )}
       </div>
+
       <form className={Style.SelectNumber} onSubmit={FindFact}>
         <InputNumber SetNumber={SetNumber} />
         <div
