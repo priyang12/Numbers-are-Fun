@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-globals */
-import { warmStrategyCache } from "workbox-recipes";
 import { clientsClaim } from "workbox-core";
 import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
@@ -68,9 +66,3 @@ self.addEventListener("message", (event: any) => {
     self.skipWaiting();
   }
 });
-
-// This can be any strategy, CacheFirst used as an example.
-const strategy = new CacheFirst();
-const urls = ["/offline.html"];
-
-warmStrategyCache({ urls, strategy });

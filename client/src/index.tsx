@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { QueryClientProvider } from "react-query";
 import App from "./App";
 import { queryClient } from "./Query";
-import * as serviceWorkerRegistration from "./serviceWokerRegister";
 
 import "./Styles/Global.css";
 
@@ -17,5 +16,3 @@ root.render(
     </QueryClientProvider>
   </React.StrictMode>
 );
-
-serviceWorkerRegistration.serviceWorkerRegister();
