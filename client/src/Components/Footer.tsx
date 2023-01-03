@@ -3,6 +3,7 @@ import LinkedinIcon from "../assets/linkedin-brands.svg";
 import TwitterIcon from "../assets/twitter-brands.svg";
 import Style from "./Styles/Footer.module.css";
 import Wave from "react-wavify";
+import { useIsMobile } from "../Hooks/useIsMobile";
 
 const links = {
   linkedin: "https://www.linkedin.com/in/priyang-patel-948685176",
@@ -11,6 +12,30 @@ const links = {
 };
 
 function Waves({}) {
+  const { isMobile } = useIsMobile();
+  const WaveOptions1 = isMobile
+    ? { height: 55, amplitude: 20, speed: 0.5, points: 5 }
+    : {
+        height: 10,
+        amplitude: 40,
+        speed: 0.5,
+        points: 2,
+      };
+
+  const WaveOption2 = isMobile
+    ? {
+        height: 70,
+        amplitude: 60,
+        speed: 0.2,
+        points: 2,
+      }
+    : {
+        height: 30,
+        amplitude: 60,
+        speed: 0.5,
+        points: 3,
+      };
+
   return (
     <>
       <Wave
@@ -22,12 +47,7 @@ function Waves({}) {
         }}
         fill="#e6c290"
         paused={false}
-        options={{
-          height: 10,
-          amplitude: 40,
-          speed: 0.5,
-          points: 2,
-        }}
+        options={WaveOptions1}
       />
       <Wave
         style={{
@@ -38,12 +58,7 @@ function Waves({}) {
         }}
         fill="#cf8824"
         paused={false}
-        options={{
-          height: 30,
-          amplitude: 60,
-          speed: 0.5,
-          points: 3,
-        }}
+        options={WaveOption2}
       />
     </>
   );
