@@ -7,7 +7,7 @@ const Board = ({
   type?: "primary" | "secondary";
 }) => {
   return (
-    <section id={`blackboard-${type}`} className="container board">
+    <section className={`container board blackboard-${type}`}>
       {props.children}
     </section>
   );

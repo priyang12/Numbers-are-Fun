@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 import { useEffect, useState } from "react";
 import { AlertBox } from "./Components/AlertBox";
 import { AnimatePresence } from "framer-motion";
+import ReloadPrompt from "./Components/ReloadPrompt";
 
 function AnimateRoutes() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <div className="App">
+      <ReloadPrompt />
       <BrowserRouter>
         <Header Title="Tales of Numbers" />
         <AlertBox alertMessage="No Internet Connection" display={!Online} />

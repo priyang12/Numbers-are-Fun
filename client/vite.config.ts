@@ -10,11 +10,6 @@ export default defineConfig({
     viteTsconfigPaths(),
     svgrPlugin(),
     VitePWA({
-      injectRegister: "auto",
-      registerType: "autoUpdate",
-      workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
-      },
       manifest: {
         short_name: "Numbers",
         name: "Tales of Numbers",

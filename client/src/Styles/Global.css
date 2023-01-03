@@ -57,7 +57,7 @@ header {
   z-index: 0;
 }
 
-#blackboard-primary {
+.blackboard-primary {
   border: tan solid 20px;
   border-top: #bda27e solid 20px;
   border-left: #b19876 solid 20px;
@@ -65,7 +65,7 @@ header {
   box-shadow: 0px 0px 6px 5px rgb(58 18 13 / 0%), 0px 0px 0px 2px #c2a782,
     0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgb(0 0 0 / 50%);
 }
-#blackboard-secondary {
+.blackboard-secondary {
   justify-content: center;
   border: #6fa58a solid 20px;
   border-top: #7ebda0 solid 20px;

@@ -4,9 +4,11 @@ const Header = ({ Title }: { Title: string }) => {
       style={{
         fontSize: "5rem",
         textAlign: "center",
-        paddingTop: "0.5em",
         textOverflow: "ellipsis",
         overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       {Title}
